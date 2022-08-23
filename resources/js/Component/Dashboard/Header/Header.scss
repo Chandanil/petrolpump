@@ -1,0 +1,88 @@
+@import "../../Style/All.scss";
+
+.cl-navigation {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    .hamburger {
+        cursor: pointer;
+        width: 35px;
+        &:focus {
+            outline: none;
+        }
+        span {
+            border-radius: 3px;
+            width: 20px;
+            height: 2px;
+            background-color: $btn-bg;
+            display: block;
+            margin: 5px 1px;
+            -moz-transition: $transition;
+            -webkit-transition: $transition;
+            transition: $transition;
+            &:nth-child(2) {
+                width: 15px;
+            }
+            &:nth-child(3) {
+                width: 10px;
+            }
+        }
+    }
+    .hamburger.show {
+        background-color: transparent;
+        outline: none;
+        border: none;
+
+        span:nth-child(1) {
+            display: none;
+            opacity: 0;
+        }
+        span:nth-child(2) {
+            -moz-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            margin: -1px;
+        }
+        span:nth-child(3) {
+            -moz-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            margin: 0px -1px;
+            width: 15px;
+        }
+    }
+    .nav-link {
+        color: $font-color;
+        font-weight: $font-500;
+        font-size: 16px;
+        &:hover {
+            color: $hover-color;
+        }
+    }
+    .nav-right {
+        li {
+            display: inline-block;
+            margin-right: 25px;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+        .item{
+            &.pos {
+                background-color: $btn-bg;
+                padding: 4px 10px;
+                border-radius: 5px;
+                img {
+                    width: 15px ;
+                }
+                span {
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: #fff;
+                    margin-left: 4px;
+                }
+                &:hover {
+                    background-color: $hover-color;
+                }
+            }
+        }
+    }
+}

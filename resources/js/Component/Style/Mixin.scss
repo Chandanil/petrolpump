@@ -1,0 +1,35 @@
+@mixin shadow {
+    box-shadow: 0 1px 4px  rgba(0, 0 ,0 , 0.10);
+    padding: 15px;
+    transition: $transition;
+    background-color: #fff;
+    border-radius: 3px;
+    &:hover {
+        box-shadow: 0 6px 10px rgba(0, 0 ,0 , 0.10);
+        transition: $transition;
+    }
+}
+@mixin unorder-list {
+    list-style-type: disclosure-closed;
+    padding-bottom: 10px;
+}
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+@mixin btn {
+    background-color: $btn-bg;
+    color: #fff;
+    padding: 7px 20px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    position: relative;
+    transition: $transition;
+    font-size: 14px;
+    &:hover {
+       opacity: 0.9;
+       background-color: $hover-color;
+       color: #fff;
+       transition: $transition;
+    }
+}

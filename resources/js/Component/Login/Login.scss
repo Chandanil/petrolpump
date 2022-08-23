@@ -1,0 +1,48 @@
+@import "../Style/All.scss";
+
+
+.login-form {
+    .login-header {
+        margin-bottom: 25px;
+        .title {
+            font-weight: $font-500;
+            font-size: 36px;
+        }
+        strong {
+            display: block;
+            font-weight: $font-700
+        }
+    }
+    .flex {
+        justify-content: center;
+        @include flex;
+    }
+    .form-wrap {
+        padding: 30px;
+        @include shadow;
+        margin-right: 15px;
+    }
+    .login-wrap {
+       min-width: 335px;
+       .icon {
+        position: absolute;
+        right: 10px;
+        top: 18px;
+        font-size: 14px;
+        color: #989898;
+       }
+       .fpw{
+        margin-left: auto;
+        font-size: 14px;
+        text-decoration: underline;
+       }
+       .btn {
+        width: 100%;
+        padding: 8px 15px;
+        font-size: 20px;
+       }
+    }
+    .form-img {
+        width: 45%;
+       }
+}

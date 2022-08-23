@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('customers',[App\Http\Controllers\Api\CustomerController::class,'index']);
+Route::get('piechartData',[App\Http\Controllers\Api\CustomerController::class,'piechartData']);
+Route::get('infoData',[App\Http\Controllers\Api\CustomerController::class,'infoData']);

@@ -1,0 +1,40 @@
+@import "../../Style/All.scss";
+.productSelect-wrap {
+    .select-btn{
+        li {
+            display: inline-block;
+    background: $bg-color;
+    margin-right: 20px;
+    padding: 20px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 25px;
+    
+    .title {
+        font-size: 14px;
+        font-weight: $font-500;
+        margin-bottom: 3px;
+        color: $font-color;
+    }
+    span {
+        display: block;
+        color: $light-color;
+    }
+    &:last-child{
+        margin-right: 0;
+    }
+        }
+    }
+    .cl-table {
+        .icon {
+            color: #FF0000;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+    .total {
+        label {
+            font-weight: $font-600;
+        }
+    }
+}

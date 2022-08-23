@@ -1,0 +1,117 @@
+@import "./Mixin.scss";
+@import "./Variable.scss";
+.App {
+    border-radius: 10px 10px 10px 0;
+}
+body {
+    font-size: 16px;
+    font-family: "Manrope", sans-serif;
+    font-weight: $font-400;
+    color: $font-color;
+}
+ul,
+ol {
+    padding-left: 0;
+    margin-bottom: 0;
+    li {
+        list-style: none;
+    }
+}
+img {
+    width: 100%;
+}
+a {
+    text-decoration: none;
+    transition: $transition;
+    color: $btn-bg;
+    display: block;
+    &:hover {
+        color: $hover-color;
+    }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    color: $btn-bg;
+}
+.pd-section {
+    padding: 30px 0 0;
+}
+.cl-btn,
+.border-btn {
+    @include btn;
+}
+.border-btn {
+    background-color: transparent;
+    border: 1px solid $btn-bg;
+}
+.cl-header {
+    .title {
+        margin-bottom: $margin-15;
+        font-size: 16px;
+        color: $font-color;
+    }
+}
+
+.form-group {
+    margin-bottom: 22px;
+    position: relative;
+}
+.form-control,
+input[type="checkbox"] {
+    border-color: $border-color;
+    padding: 6px 25px 6px 10px;
+    border-radius: 5px;
+    &:focus {
+        box-shadow: none;
+        border-color: $font-color;
+    }
+    &::placeholder {
+        font-size: 14px;
+        color: $placeholder-color;
+    }
+}
+.form-group{
+    &.d-flex {
+        align-items: center;
+        label {
+            min-width: 26%;
+            text-align: center;
+            margin-right: 15px;
+            font-size: 14px;
+            font-weight: $font-500;
+        }
+    }
+}
+.login-form {
+    .form-control {
+        padding: 11px 25px 11px 10px;
+        border-radius: 10px;
+    }
+}
+.remember {
+    color: $placeholder-color;
+    margin-left: 8px;
+    font-size: 14px;
+}
+.wrapper-content{
+   width: 86%;
+    transition: $transition;
+    float: right;
+}
+.same-bg {
+    background-color: $bg-color;
+    border-radius: 10px;
+    padding: $padding-15
+}
+.container {
+    padding: 0 24px
+}
+.required {
+    color: rgb(221, 11, 11);
+}

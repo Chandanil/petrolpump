@@ -1,0 +1,22 @@
+@import "../../Style/All.scss";
+.report-wrap{
+    &.overview {
+       .same-bg {
+        min-height: 345px;
+       }
+        .item {
+            margin-top: $margin-15;
+            font-weight: $font-500;
+            font-size: 14px;
+            &:first-child{
+                margin-top: 0;
+            }
+            strong{
+                font-weight: $font-500;
+            }
+            span {
+                float: right;
+            }
+        }
+    }
+}

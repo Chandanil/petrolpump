@@ -1,0 +1,71 @@
+@import "../../Style/All.scss";
+
+.fact-wrap {
+    @include shadow;
+    padding: 0;
+    color: #fff;
+    border-radius: 10px;
+    background-color: $btn-bg;
+    .title, .numb {
+        color: #fff;
+        font-weight: $font-600;
+    }
+    .viewmore{
+        font-weight: $font-600;
+        text-align: center;
+        color: #fff;
+        padding: 8px 15px;
+        border-radius: 0 0 10px 10px;
+        font-size: 14px;
+        background-color: #454545;
+
+        i {
+            font-size: 8px;
+        }
+    }
+    &.b-blue{
+        background-color: #00CACA;
+        .viewmore {
+            background-color: #2EE4E4;
+        }
+    }
+    &.b-red{
+        background-color: #EA044E;
+        .viewmore {
+            background-color: #DB386C;
+        }
+    }
+    &.b-darkblue{
+        background-color: #1F51FF;
+        .viewmore {
+            background-color: #3A5CD4;
+        }
+    }
+    &.b-green{
+        background-color: #0ACE2A;
+        .viewmore {
+            background-color: #31DC4D;
+        }
+    }
+    .fact-content{
+        padding: 30px 20px;
+        @include flex;
+        .icon {
+            font-size: 40px;
+            margin-left: auto;
+            transition: $transition;
+        }
+    }
+    &:hover {
+        .fact-content{
+            .icon {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+        .viewmore {
+            opacity: 0.8;
+        }
+    }
+        
+}
