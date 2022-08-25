@@ -28,10 +28,13 @@ export const Sidebar = (props) => {
             </Accordion.Header>
             <Accordion.Body>
               <Link className="item" to="/productsale">
-                Sale 1
+                Product Sale
               </Link>
-              <Link className="item" to="">
-                Sale 2
+              <Link className="item" to="/newsale">
+               New Sale
+              </Link>
+              <Link className="item" to="/managesale">
+               Manage Sale
               </Link>
             </Accordion.Body>
           </Accordion.Item>

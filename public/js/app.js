@@ -4609,7 +4609,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Infocard_Infocard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Infocard/Infocard */ "./resources/js/Component/Dashboard/Infocard/Infocard.js");
 /* harmony import */ var _Chart_Charts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Chart/Charts */ "./resources/js/Component/Dashboard/Chart/Charts.js");
 /* harmony import */ var _Piechart_Piechart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Piechart/Piechart */ "./resources/js/Component/Dashboard/Piechart/Piechart.js");
-/* harmony import */ var _Table_Table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Table/Table */ "./resources/js/Component/Dashboard/Table/Table.js");
+/* harmony import */ var _Table_Table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Table/Table */ "./resources/js/Component/Table/Table.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -5069,11 +5069,15 @@ var Sidebar = function Sidebar(props) {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
               className: "item",
               to: "/productsale",
-              children: "Sale 1"
+              children: "Product Sale"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
               className: "item",
-              to: "",
-              children: "Sale 2"
+              to: "/newsale",
+              children: "New Sale"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+              className: "item",
+              to: "/managesale",
+              children: "Manage Sale"
             })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap_Accordion__WEBPACK_IMPORTED_MODULE_2__["default"].Item, {
@@ -5224,126 +5228,81 @@ var Sidebar = function Sidebar(props) {
 
 /***/ }),
 
-/***/ "./resources/js/Component/Dashboard/Table/Table.js":
-/*!*********************************************************!*\
-  !*** ./resources/js/Component/Dashboard/Table/Table.js ***!
-  \*********************************************************/
+/***/ "./resources/js/Component/InnerPage/ManageSale/Managesale.js":
+/*!*******************************************************************!*\
+  !*** ./resources/js/Component/InnerPage/ManageSale/Managesale.js ***!
+  \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Table": () => (/* binding */ Table)
+/* harmony export */   "Managesale": () => (/* binding */ Managesale)
 /* harmony export */ });
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_bootstrap_esm_Container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/esm/Container */ "./node_modules/react-bootstrap/esm/Container.js");
-/* harmony import */ var _Table_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Table.scss */ "./resources/js/Component/Dashboard/Table/Table.scss");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+/* harmony import */ var react_bootstrap_esm_Container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/esm/Container */ "./node_modules/react-bootstrap/esm/Container.js");
+/* harmony import */ var react_bootstrap_esm_Row__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/esm/Row */ "./node_modules/react-bootstrap/esm/Row.js");
+/* harmony import */ var react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/esm/Col */ "./node_modules/react-bootstrap/esm/Col.js");
+/* harmony import */ var _Table_Tablelist__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Table/Tablelist */ "./resources/js/Component/Table/Tablelist.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 
 
-
-
-var Table = function Table() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]),
-      _useState2 = _slicedToArray(_useState, 2),
-      table_data = _useState2[0],
-      setTableData = _useState2[1];
-
-  var total = 0;
-  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
-    fetchcustomerdetail();
-  }, []);
-
-  var fetchcustomerdetail = function fetchcustomerdetail() {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/customers').then(function (_ref) {
-      var data = _ref.data;
-      setTableData(data);
-    });
-  };
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "pd-section",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap_esm_Container__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "cl-header",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-          className: "title",
-          children: "Sales and Purchase Report "
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "same-bg cl-table ",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
-          to: "",
-          className: "cl-btn btn",
-          children: " See all "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
-          className: "table table-hover",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-                children: "S.N."
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-                children: "Invoice No."
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-                children: "Customer Name"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-                children: "Product"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-                children: "Quantity"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-                children: "Total Amount"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-                children: "Payment Type"
+var Managesale = function Managesale() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "pd-section managesale-section",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap_esm_Row__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            sm: 6,
+            md: 3,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "form-group d-flex",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                children: "Start Date:"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "text",
+                name: "",
+                id: "",
+                className: "form-control"
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tbody", {
-            children: [table_data === null || table_data === void 0 ? void 0 : table_data.map(function (item, index) {
-              total += parseFloat(item.t_amount); // total = [...total, item.t_amount];
-
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-                  children: index + 1
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-                  children: item.invoice
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-                  children: item.name
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-                  children: item.product
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-                  children: item.quantity
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-                  children: item.t_amount
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-                  children: item.payment_type
-                })]
-              }, index);
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("td", {
-                children: ["Total: Rs.", total]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            sm: 6,
+            md: 3,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "form-group d-flex",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                children: "End Date:"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "text",
+                name: "",
+                id: "",
+                className: "form-control"
               })]
-            })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            sm: 6,
+            md: {
+              span: 3,
+              offest: 3
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+              className: "cl-btn",
+              children: "Search"
+            })
           })]
-        })]
-      })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "cl-header",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+            className: "title",
+            children: "Manage Sale"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Table_Tablelist__WEBPACK_IMPORTED_MODULE_0__.Tablelist, {})]
+      })
     })
   });
 };
@@ -5375,270 +5334,483 @@ __webpack_require__.r(__webpack_exports__);
 
 var Product = function Product() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "pd-section",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "productSelect-wrap",
+    className: "pd-section productSelect-wrap",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap_esm_Container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "cl-header",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+          className: "title",
+          children: "Select Product"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "cl-header",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-            className: "title",
-            children: "Select Product"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "select-btn",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h6", {
-                  className: "title",
-                  children: "Petrol"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                  children: "Rs.182/ltr"
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h6", {
-                  className: "title",
-                  children: "Diesel    "
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                  children: "Rs.170/ltr"
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h6", {
-                  className: "title",
-                  children: "Kerosene"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                  children: "Rs.170/ltr"
-                })]
+          className: "select-btn",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h6", {
+                className: "title",
+                children: "Petrol"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: "Rs.182/ltr"
               })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap_esm_Row__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
-              md: 6,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                className: "form-group d-flex",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                  children: "Invoice No."
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                  type: "text",
-                  className: "form-control",
-                  placeholder: "E.g 1001"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
-              md: 6,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                className: "form-group d-flex",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                  children: "Customer Name"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                  type: "text",
-                  className: "form-control"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
-              md: 6,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                className: "form-group d-flex",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                  children: "Quntity In ltr"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                  type: "text",
-                  className: "form-control"
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
-              md: 6,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                className: "form-group d-flex",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                  children: "Amount"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                  type: "text",
-                  className: "form-control"
-                })]
-              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h6", {
+                className: "title",
+                children: "Diesel "
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: "Rs.170/ltr"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h6", {
+                className: "title",
+                children: "Kerosene"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: "Rs.170/ltr"
+              })]
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "cl-table",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("table", {
-              className: "table table-hover",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("thead", {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
-                    children: ["Product", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                      className: "required",
-                      children: "*"
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
-                    children: ["Quantity", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                      className: "required",
-                      children: "*"
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
-                    children: ["Rate", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                      className: "required",
-                      children: "*"
-                    })]
-                  }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
-                    children: ["Total", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                      className: "required",
-                      children: "*"
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
-                    children: ["Action", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                      className: "required",
-                      children: "*"
-                    })]
-                  })]
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tbody", {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-                    children: "---"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-                    children: "---"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-                    children: "---"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-                    children: "---"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
-                      className: "fa fa-times-circle icon"
-                    })
-                  })]
-                })
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap_esm_Row__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            md: 6,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "form-group d-flex",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                children: "Invoice No."
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "text",
+                className: "form-control",
+                placeholder: "E.g 1001"
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "total",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Row__WEBPACK_IMPORTED_MODULE_3__["default"], {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                lg: {
-                  span: 4,
-                  offset: 6
-                },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                  className: "form-group d-flex",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                    children: "Gross Amount:"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                    type: "text",
-                    className: "form-control"
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                  className: "form-group d-flex",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                    children: "Discount:"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                    type: "text",
-                    className: "form-control"
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                  className: "form-group d-flex",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                    children: "Taxable Amount:"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                    type: "text",
-                    className: "form-control"
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                  className: "form-group d-flex",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                    children: "VAT:"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                    type: "text",
-                    className: "form-control"
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                  className: "form-group d-flex",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                    children: "Grand Total:"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                    type: "text",
-                    className: "form-control"
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                  className: "form-group d-flex",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                    children: "Payment Type:"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
-                    className: "form-control",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                      children: "Select option"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                      children: "Cash in Hand"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                      children: "Bank Transfer"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                      children: "Office Token "
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                      children: "Credit "
-                    })]
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                  className: "form-group d-flex",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-                    className: "cl-btn ",
-                    children: "Generate Bill"
-                  })]
-                })]
-              })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            md: 6,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "form-group d-flex",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                children: "Customer Name"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "text",
+                className: "form-control"
+              })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "total",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap_esm_Row__WEBPACK_IMPORTED_MODULE_3__["default"], {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                lg: 3,
-                md: 6,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                  className: "form-group d-flex",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                    children: "Tender Amount:"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                    type: "text",
-                    className: "form-control"
-                  })]
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                lg: 3,
-                md: 6,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                  className: "form-group d-flex",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                    children: "Return:"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                    type: "text",
-                    className: "form-control"
-                  })]
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                lg: 3,
-                md: 6,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                  className: "form-group d-flex",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-                    children: "Due:"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                    type: "text",
-                    className: "form-control"
-                  })]
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                lg: 3,
-                md: 6,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                  className: "form-group d-flex",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-                    className: "cl-btn sm-w-100",
-                    children: "Save Sale"
-                  })]
-                })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            md: 6,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "form-group d-flex",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                children: "Quntity In ltr"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "text",
+                className: "form-control"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            md: 6,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "form-group d-flex",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                children: "Amount"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "text",
+                className: "form-control"
               })]
             })
           })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "cl-table",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("table", {
+            className: "table table-hover",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("thead", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
+                  children: ["Product", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                    className: "required",
+                    children: "*"
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
+                  children: ["Quantity", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                    className: "required",
+                    children: "*"
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
+                  children: ["Rate", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                    className: "required",
+                    children: "*"
+                  })]
+                }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
+                  children: ["Total", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                    className: "required",
+                    children: "*"
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
+                  children: ["Action", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                    className: "required",
+                    children: "*"
+                  })]
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tbody", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                  children: "---"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                  children: "---"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                  children: "---"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                  children: "---"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+                    className: "fa fa-times-circle icon"
+                  })
+                })]
+              })
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "total",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Row__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              lg: {
+                span: 4,
+                offset: 6
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                  children: "Gross Amount:"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                  type: "text",
+                  className: "form-control"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                  children: "Discount:"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                  type: "text",
+                  className: "form-control"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                  children: "Taxable Amount:"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                  type: "text",
+                  className: "form-control"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                  children: "VAT:"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                  type: "text",
+                  className: "form-control"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                  children: "Grand Total:"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                  type: "text",
+                  className: "form-control"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                  children: "Payment Type:"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
+                  className: "form-control",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                    children: "Select option"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                    children: "Cash in Hand"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                    children: "Bank Transfer"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                    children: "Office Token "
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                    children: "Credit "
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+                  className: "cl-btn ",
+                  children: "Generate Bill"
+                })]
+              })]
+            })
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "total",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap_esm_Row__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              lg: 3,
+              md: 6,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                  children: "Tender Amount:"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                  type: "text",
+                  className: "form-control"
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              lg: 3,
+              md: 6,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                  children: "Return:"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                  type: "text",
+                  className: "form-control"
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              lg: 3,
+              md: 6,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                  children: "Due:"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                  type: "text",
+                  className: "form-control"
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              lg: 3,
+              md: 6,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+                  className: "cl-btn sm-w-100",
+                  children: "Save Sale"
+                })]
+              })
+            })]
+          })
         })]
-      })
+      })]
+    })
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/Component/InnerPage/Saleform/Saleform.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/Component/InnerPage/Saleform/Saleform.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Saleform": () => (/* binding */ Saleform)
+/* harmony export */ });
+/* harmony import */ var react_bootstrap_esm_Container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/esm/Container */ "./node_modules/react-bootstrap/esm/Container.js");
+/* harmony import */ var react_bootstrap_esm_Row__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/esm/Row */ "./node_modules/react-bootstrap/esm/Row.js");
+/* harmony import */ var react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/esm/Col */ "./node_modules/react-bootstrap/esm/Col.js");
+/* harmony import */ var _Saleform_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Saleform.scss */ "./resources/js/Component/InnerPage/Saleform/Saleform.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var Saleform = function Saleform() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "pd-section productSelect-wrap",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap_esm_Container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "cl-header",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+          className: "title",
+          children: "Select Product"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "select-btn",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h6", {
+                className: "title",
+                children: "Petrol"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: "Rs.182/ltr"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h6", {
+                className: "title",
+                children: "Diesel "
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: "Rs.170/ltr"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h6", {
+                className: "title",
+                children: "Kerosene"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: "Rs.170/ltr"
+              })]
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap_esm_Row__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            md: 6,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "form-group d-flex",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                children: "Invoice No."
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "text",
+                className: "form-control",
+                placeholder: "E.g 1001"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            md: 6,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "form-group d-flex",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                children: "Customer Name"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "text",
+                className: "form-control"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            md: 6,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "form-group d-flex",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                children: "Quntity In ltr"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "text",
+                className: "form-control"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            md: 6,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "form-group d-flex",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                children: "Amount"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "text",
+                className: "form-control"
+              })]
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "cl-table",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("table", {
+            className: "table table-hover",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("thead", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
+                  children: ["Product", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                    className: "required",
+                    children: "*"
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
+                  children: ["Quantity", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                    className: "required",
+                    children: "*"
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
+                  children: ["Rate", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                    className: "required",
+                    children: "*"
+                  })]
+                }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
+                  children: ["Total", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                    className: "required",
+                    children: "*"
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
+                  children: ["Action", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                    className: "required",
+                    children: "*"
+                  })]
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tbody", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                  children: "---"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                  children: "---"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                  children: "---"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                  children: "---"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+                    className: "fa fa-times-circle icon"
+                  })
+                })]
+              })
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "total",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap_esm_Row__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap_esm_Col__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              lg: {
+                span: 4,
+                offset: 6
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                  children: "Total Amount:"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                  type: "text",
+                  className: "form-control"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                  children: "Payment Type:"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
+                  className: "form-control",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                    children: "Select option"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                    children: "Cash in Hand"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                    children: "Bank Transfer"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                    children: "Office Token "
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                    children: "Credit "
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+                  children: "Paid Amount:"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                  type: "text",
+                  className: "form-control"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                className: "form-group d-flex",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+                  className: "cl-btn ",
+                  children: "Submit"
+                })]
+              })]
+            })
+          })
+        })]
+      })]
     })
   });
 };
@@ -5740,6 +5912,438 @@ var Login = function Login() {
 
 /***/ }),
 
+/***/ "./resources/js/Component/Pagination/Paginations.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/Component/Pagination/Paginations.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Paginations": () => (/* binding */ Paginations)
+/* harmony export */ });
+/* harmony import */ var react_paginate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-paginate */ "./node_modules/react-paginate/dist/react-paginate.js");
+/* harmony import */ var react_paginate__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_paginate__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+
+
+
+
+var items = _toConsumableArray(Array(33).keys());
+
+function Items(_ref) {
+  var currentItems = _ref.currentItems;
+  // console.log(currentItems);
+  var total = 0;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "items",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("table", {
+      className: "table",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("thead", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+            children: "S.N"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+            children: "Invoice No."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+            children: "Sale By"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+            children: "Customer Name"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+            children: "Product"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+            children: "Quantity"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+            children: "Date"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+            children: "Total Amount"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+            children: "Action"
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tbody", {
+        children: [currentItems && (currentItems === null || currentItems === void 0 ? void 0 : currentItems.map(function (item, index) {
+          total += parseFloat(item.t_amount);
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+              children: index + 1
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+              children: item.invoice
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+              children: item.sale_by
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+              children: item.customer_name
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+              children: item.product
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+              children: item.quantity
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+              children: item.date
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+              children: item.t_amount
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {})]
+          }, index);
+        })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("strong", {
+              children: ["Total Rs: ", total]
+            })
+          })]
+        })]
+      })]
+    })
+  });
+}
+
+var Paginations = function Paginations(_ref2) {
+  var _ref2$itemsPerPage = _ref2.itemsPerPage,
+      itemsPerPage = _ref2$itemsPerPage === void 0 ? 4 : _ref2$itemsPerPage;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      tablelist = _useState2[0],
+      setTablelist = _useState2[1];
+
+  var total = 0;
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    fetchtablelist();
+  }, []);
+
+  var fetchtablelist = function fetchtablelist() {
+    axios.get('/api/tablelist').then(function (_ref3) {
+      var data = _ref3.data;
+      setTablelist(data); // console.log(data);
+    });
+  }; // We start with an empty list of items.
+
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      currentItems = _useState4[0],
+      setCurrentItems = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+      _useState6 = _slicedToArray(_useState5, 2),
+      pageCount = _useState6[0],
+      setPageCount = _useState6[1]; // Here we use item offsets; we could also use page offsets
+  // following the API or data you're working with.
+
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+      _useState8 = _slicedToArray(_useState7, 2),
+      itemOffset = _useState8[0],
+      setItemOffset = _useState8[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    // Fetch items from another resources.
+    var endOffset = itemOffset + itemsPerPage;
+    console.log(tablelist.slice(itemOffset, endOffset));
+    console.log("Loading items from ".concat(itemOffset, " to ").concat(endOffset));
+    setCurrentItems(tablelist.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(tablelist.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, tablelist]); // Invoke when user click to request another page.
+
+  var handlePageClick = function handlePageClick(event) {
+    var newOffset = event.selected * itemsPerPage % items.length;
+    console.log("User requested page number ".concat(event.selected, ", which is offset ").concat(newOffset));
+    setItemOffset(newOffset);
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Items, {
+      currentItems: currentItems
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)((react_paginate__WEBPACK_IMPORTED_MODULE_0___default()), {
+      nextLabel: "next >",
+      onPageChange: handlePageClick,
+      pageRangeDisplayed: 3,
+      marginPagesDisplayed: 2,
+      pageCount: pageCount,
+      previousLabel: "< previous",
+      pageClassName: "page-item",
+      pageLinkClassName: "page-link",
+      previousClassName: "page-item",
+      previousLinkClassName: "page-link",
+      nextClassName: "page-item",
+      nextLinkClassName: "page-link",
+      breakLabel: "...",
+      breakClassName: "page-item",
+      breakLinkClassName: "page-link",
+      containerClassName: "pagination",
+      activeClassName: "active",
+      renderOnZeroPageCount: null
+    })]
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/Component/Table/Table.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Component/Table/Table.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Table": () => (/* binding */ Table)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_bootstrap_esm_Container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/esm/Container */ "./node_modules/react-bootstrap/esm/Container.js");
+/* harmony import */ var _Table_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Table.scss */ "./resources/js/Component/Table/Table.scss");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+var Table = function Table() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      table_data = _useState2[0],
+      setTableData = _useState2[1];
+
+  var total = 0;
+  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
+    fetchcustomerdetail();
+  }, []);
+
+  var fetchcustomerdetail = function fetchcustomerdetail() {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/customers').then(function (_ref) {
+      var data = _ref.data;
+      setTableData(data);
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: "pd-section",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap_esm_Container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "cl-header",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+          className: "title",
+          children: "Sales and Purchase Report "
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "same-bg cl-table ",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+          to: "",
+          className: "cl-btn btn",
+          children: " See all "
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
+          className: "table table-hover",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "S.N."
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "Invoice No."
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "Customer Name"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "Product"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "Quantity"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "Total Amount"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "Payment Type"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tbody", {
+            children: [table_data === null || table_data === void 0 ? void 0 : table_data.map(function (item, index) {
+              total += parseFloat(item.t_amount); // total = [...total, item.t_amount];
+
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: index + 1
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: item.invoice
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: item.name
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: item.product
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: item.quantity
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: item.t_amount
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: item.payment_type
+                })]
+              }, index);
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("strong", {
+                  children: ["Total: Rs.", total]
+                })
+              })]
+            })]
+          })]
+        })]
+      })]
+    })
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/Component/Table/Tablelist.js":
+/*!***************************************************!*\
+  !*** ./resources/js/Component/Table/Tablelist.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Tablelist": () => (/* binding */ Tablelist)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Pagination_Paginations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Pagination/Paginations */ "./resources/js/Component/Pagination/Paginations.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+var Tablelist = function Tablelist() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      tablelist = _useState2[0],
+      setTablelist = _useState2[1];
+
+  var total = 0;
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    fetchtablelist();
+  }, []);
+
+  var fetchtablelist = function fetchtablelist() {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/tablelist').then(function (_ref) {
+      var data = _ref.data;
+      setTablelist(data);
+      console.log(data);
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "cl-table same-bg table-list",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("form", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "d-flex search-content",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "select form-group d-flex",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            children: "Show"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("select", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+              children: "01"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+              children: "02"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+              children: "03"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+              children: "04"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+              children: "05"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+              children: "06"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+              children: "07"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            children: "Entries"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "form-group d-flex search",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+            children: "Search:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            type: "text",
+            name: "",
+            id: "",
+            className: "form-control"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+          className: "download-doc form-group",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+            className: "item",
+            children: "CSV"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+            className: "item",
+            children: "PDF"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+            className: "item",
+            children: "Copy"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+            className: "item",
+            children: "Print"
+          })]
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Pagination_Paginations__WEBPACK_IMPORTED_MODULE_2__.Paginations, {})]
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -5752,8 +6356,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _Component_Login_Login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Component/Login/Login */ "./resources/js/Component/Login/Login.js");
 /* harmony import */ var _Component_Dashboard_Home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Component/Dashboard/Home */ "./resources/js/Component/Dashboard/Home.js");
@@ -5764,7 +6368,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Component_Dashboard_Header_Header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Component/Dashboard/Header/Header */ "./resources/js/Component/Dashboard/Header/Header.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Component_InnerPage_Saleform_Saleform__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Component/InnerPage/Saleform/Saleform */ "./resources/js/Component/InnerPage/Saleform/Saleform.js");
+/* harmony import */ var _Component_InnerPage_ManageSale_Managesale__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Component/InnerPage/ManageSale/Managesale */ "./resources/js/Component/InnerPage/ManageSale/Managesale.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5778,6 +6384,8 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+
 
 
 
@@ -5813,31 +6421,37 @@ var App = function App() {
     config.headers.Authorization = token ? "Bearer ".concat(token) : "";
     return config;
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
     className: "App",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.BrowserRouter, {
-      children: location === "/" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Routes, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.BrowserRouter, {
+      children: location === "/" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Routes, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
           path: "/",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Component_Login_Login__WEBPACK_IMPORTED_MODULE_2__.Login, {})
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Component_Login_Login__WEBPACK_IMPORTED_MODULE_2__.Login, {})
         })
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
         className: "site-content clearfix \n                        ".concat(showSidebar === false ? "hide-sidebar" : ""),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("aside", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("aside", {
           className: "widget-area  leftsidebar",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Component_Dashboard_Sidebar_Sidebar__WEBPACK_IMPORTED_MODULE_6__.Sidebar, {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("section", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Component_Dashboard_Sidebar_Sidebar__WEBPACK_IMPORTED_MODULE_6__.Sidebar, {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("section", {
           className: "wrapper-content",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Component_Dashboard_Header_Header__WEBPACK_IMPORTED_MODULE_7__.Header, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Component_Dashboard_Header_Header__WEBPACK_IMPORTED_MODULE_7__.Header, {
             sidebarToggle: sidebarToggle,
             showSidebar: showSidebar
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Routes, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Routes, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
               path: "/home",
-              element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Component_Dashboard_Home__WEBPACK_IMPORTED_MODULE_3__.Home, {})
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+              element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Component_Dashboard_Home__WEBPACK_IMPORTED_MODULE_3__.Home, {})
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
               path: "/productsale",
-              element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Component_InnerPage_ProductForm_Product__WEBPACK_IMPORTED_MODULE_5__.Product, {})
+              element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Component_InnerPage_ProductForm_Product__WEBPACK_IMPORTED_MODULE_5__.Product, {})
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+              path: "/newsale",
+              element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Component_InnerPage_Saleform_Saleform__WEBPACK_IMPORTED_MODULE_9__.Saleform, {})
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+              path: "/managesale",
+              element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Component_InnerPage_ManageSale_Managesale__WEBPACK_IMPORTED_MODULE_10__.Managesale, {})
             })]
           })]
         })]
@@ -5850,7 +6464,7 @@ var App = function App() {
 //     ReactDOM.render(<HelloReact />, document.getElementById('hello-react'));
 // }
 
-react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.querySelector("#root")).render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(App, {}));
+react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.querySelector("#root")).render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(App, {}));
 
 /***/ }),
 
@@ -5993,7 +6607,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".App {\n  border-radius: 10px 10px 10px 0;\n}\n\nbody {\n  font-size: 16px;\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 400;\n  color: #000000;\n}\n\nul,\nol {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\nul li,\nol li {\n  list-style: none;\n}\n\nimg {\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  transition: all ease-in-out 0.4s;\n  color: #414141;\n  display: block;\n}\n\na:hover {\n  color: #ff735c;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 700;\n  color: #414141;\n}\n\n.pd-section {\n  padding: 30px 0 0;\n}\n\n.cl-btn,\n.border-btn {\n  background-color: #414141;\n  color: #fff;\n  padding: 7px 20px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  position: relative;\n  transition: all ease-in-out 0.4s;\n  font-size: 14px;\n}\n\n.cl-btn:hover,\n.border-btn:hover {\n  opacity: 0.9;\n  background-color: #ff735c;\n  color: #fff;\n  transition: all ease-in-out 0.4s;\n}\n\n.border-btn {\n  background-color: transparent;\n  border: 1px solid #414141;\n}\n\n.cl-header .title {\n  margin-bottom: 15px;\n  font-size: 16px;\n  color: #000000;\n}\n\n.form-group {\n  margin-bottom: 22px;\n  position: relative;\n}\n\n.form-control,\ninput[type=\"checkbox\"] {\n  border-color: #B1B1B1;\n  padding: 6px 25px 6px 10px;\n  border-radius: 5px;\n}\n\n.form-control:focus,\ninput[type=\"checkbox\"]:focus {\n  box-shadow: none;\n  border-color: #000000;\n}\n\n.form-control::-moz-placeholder, input[type=\"checkbox\"]::-moz-placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-control::placeholder,\ninput[type=\"checkbox\"]::placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-group.d-flex {\n  align-items: center;\n}\n\n.form-group.d-flex label {\n  min-width: 26%;\n  text-align: center;\n  margin-right: 15px;\n  font-size: 14px;\n  font-weight: 500;\n}\n\n.login-form .form-control {\n  padding: 11px 25px 11px 10px;\n  border-radius: 10px;\n}\n\n.remember {\n  color: #989898;\n  margin-left: 8px;\n  font-size: 14px;\n}\n\n.wrapper-content {\n  width: 86%;\n  transition: all ease-in-out 0.4s;\n  float: right;\n}\n\n.same-bg {\n  background-color: #F9F9F9;\n  border-radius: 10px;\n  padding: 15px;\n}\n\n.container {\n  padding: 0 24px;\n}\n\n.required {\n  color: #dd0b0b;\n}\n\n.report-wrap.overview .same-bg {\n  min-height: 345px;\n}\n\n.report-wrap.overview .item {\n  margin-top: 15px;\n  font-weight: 500;\n  font-size: 14px;\n}\n\n.report-wrap.overview .item:first-child {\n  margin-top: 0;\n}\n\n.report-wrap.overview .item strong {\n  font-weight: 500;\n}\n\n.report-wrap.overview .item span {\n  float: right;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  font-size: 16px;\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 400;\n  color: #000000;\n}\n\nul,\nol {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\nul li,\nol li {\n  list-style: none;\n}\n\nimg {\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  transition: all ease-in-out 0.4s;\n  color: #414141;\n  display: block;\n}\n\na:hover {\n  color: #ff735c;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 700;\n  color: #414141;\n}\n\n.pd-section {\n  padding: 30px 0 0;\n}\n\n.cl-btn,\n.border-btn {\n  background-color: #414141;\n  color: #fff;\n  padding: 7px 20px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  position: relative;\n  transition: all ease-in-out 0.4s;\n  font-size: 14px;\n}\n\n.cl-btn:hover,\n.border-btn:hover {\n  opacity: 0.9;\n  background-color: #ff735c;\n  color: #fff;\n  transition: all ease-in-out 0.4s;\n}\n\n.border-btn {\n  background-color: transparent;\n  border: 1px solid #414141;\n}\n\n.cl-header .title {\n  margin-bottom: 15px;\n  font-size: 16px;\n  color: #000000;\n}\n\n.form-group {\n  margin-bottom: 22px;\n  position: relative;\n}\n\n.form-control,\ninput[type=\"checkbox\"] {\n  border-color: #B1B1B1;\n  padding: 6px 25px 6px 10px;\n  border-radius: 5px;\n}\n\n.form-control:focus,\ninput[type=\"checkbox\"]:focus {\n  box-shadow: none;\n  border-color: #000000;\n}\n\n.form-control::-moz-placeholder, input[type=\"checkbox\"]::-moz-placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-control::placeholder,\ninput[type=\"checkbox\"]::placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-group.d-flex {\n  align-items: center;\n}\n\n.form-group.d-flex label {\n  min-width: 26%;\n  text-align: center;\n  margin-right: 15px;\n  font-size: 14px;\n  font-weight: 500;\n}\n\n.login-form .form-control {\n  padding: 11px 25px 11px 10px;\n  border-radius: 10px;\n}\n\n.remember {\n  color: #989898;\n  margin-left: 8px;\n  font-size: 14px;\n}\n\n.wrapper-content {\n  width: 87%;\n  transition: all ease-in-out 0.4s;\n  float: right;\n}\n\n.same-bg {\n  background-color: #F9F9F9;\n  border-radius: 10px;\n  padding: 15px;\n}\n\n.container {\n  padding: 0 24px;\n}\n\n.required {\n  color: #dd0b0b;\n}\n\n.report-wrap.overview .same-bg {\n  min-height: 345px;\n}\n\n.report-wrap.overview .item {\n  margin-top: 15px;\n  font-weight: 500;\n  font-size: 14px;\n}\n\n.report-wrap.overview .item:first-child {\n  margin-top: 0;\n}\n\n.report-wrap.overview .item strong {\n  font-weight: 500;\n}\n\n.report-wrap.overview .item span {\n  float: right;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6017,7 +6631,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".App {\n  border-radius: 10px 10px 10px 0;\n}\n\nbody {\n  font-size: 16px;\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 400;\n  color: #000000;\n}\n\nul,\nol {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\nul li,\nol li {\n  list-style: none;\n}\n\nimg {\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  transition: all ease-in-out 0.4s;\n  color: #414141;\n  display: block;\n}\n\na:hover {\n  color: #ff735c;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 700;\n  color: #414141;\n}\n\n.pd-section {\n  padding: 30px 0 0;\n}\n\n.cl-btn,\n.border-btn {\n  background-color: #414141;\n  color: #fff;\n  padding: 7px 20px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  position: relative;\n  transition: all ease-in-out 0.4s;\n  font-size: 14px;\n}\n\n.cl-btn:hover,\n.border-btn:hover {\n  opacity: 0.9;\n  background-color: #ff735c;\n  color: #fff;\n  transition: all ease-in-out 0.4s;\n}\n\n.border-btn {\n  background-color: transparent;\n  border: 1px solid #414141;\n}\n\n.cl-header .title {\n  margin-bottom: 15px;\n  font-size: 16px;\n  color: #000000;\n}\n\n.form-group {\n  margin-bottom: 22px;\n  position: relative;\n}\n\n.form-control,\ninput[type=\"checkbox\"] {\n  border-color: #B1B1B1;\n  padding: 6px 25px 6px 10px;\n  border-radius: 5px;\n}\n\n.form-control:focus,\ninput[type=\"checkbox\"]:focus {\n  box-shadow: none;\n  border-color: #000000;\n}\n\n.form-control::-moz-placeholder, input[type=\"checkbox\"]::-moz-placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-control::placeholder,\ninput[type=\"checkbox\"]::placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-group.d-flex {\n  align-items: center;\n}\n\n.form-group.d-flex label {\n  min-width: 26%;\n  text-align: center;\n  margin-right: 15px;\n  font-size: 14px;\n  font-weight: 500;\n}\n\n.login-form .form-control {\n  padding: 11px 25px 11px 10px;\n  border-radius: 10px;\n}\n\n.remember {\n  color: #989898;\n  margin-left: 8px;\n  font-size: 14px;\n}\n\n.wrapper-content {\n  width: 86%;\n  transition: all ease-in-out 0.4s;\n  float: right;\n}\n\n.same-bg {\n  background-color: #F9F9F9;\n  border-radius: 10px;\n  padding: 15px;\n}\n\n.container {\n  padding: 0 24px;\n}\n\n.required {\n  color: #dd0b0b;\n}\n\n.cl-navigation {\n  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);\n}\n\n.cl-navigation .hamburger {\n  cursor: pointer;\n  width: 35px;\n}\n\n.cl-navigation .hamburger:focus {\n  outline: none;\n}\n\n.cl-navigation .hamburger span {\n  border-radius: 3px;\n  width: 20px;\n  height: 2px;\n  background-color: #414141;\n  display: block;\n  margin: 5px 1px;\n  transition: all ease-in-out 0.4s;\n}\n\n.cl-navigation .hamburger span:nth-child(2) {\n  width: 15px;\n}\n\n.cl-navigation .hamburger span:nth-child(3) {\n  width: 10px;\n}\n\n.cl-navigation .hamburger.show {\n  background-color: transparent;\n  outline: none;\n  border: none;\n}\n\n.cl-navigation .hamburger.show span:nth-child(1) {\n  display: none;\n  opacity: 0;\n}\n\n.cl-navigation .hamburger.show span:nth-child(2) {\n  transform: rotate(45deg);\n  margin: -1px;\n}\n\n.cl-navigation .hamburger.show span:nth-child(3) {\n  transform: rotate(-45deg);\n  margin: 0px -1px;\n  width: 15px;\n}\n\n.cl-navigation .nav-link {\n  color: #000000;\n  font-weight: 500;\n  font-size: 16px;\n}\n\n.cl-navigation .nav-link:hover {\n  color: #ff735c;\n}\n\n.cl-navigation .nav-right li {\n  display: inline-block;\n  margin-right: 25px;\n}\n\n.cl-navigation .nav-right li:last-child {\n  margin-right: 0;\n}\n\n.cl-navigation .nav-right .item.pos {\n  background-color: #414141;\n  padding: 4px 10px;\n  border-radius: 5px;\n}\n\n.cl-navigation .nav-right .item.pos img {\n  width: 15px;\n}\n\n.cl-navigation .nav-right .item.pos span {\n  font-size: 12px;\n  font-weight: 500;\n  color: #fff;\n  margin-left: 4px;\n}\n\n.cl-navigation .nav-right .item.pos:hover {\n  background-color: #ff735c;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  font-size: 16px;\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 400;\n  color: #000000;\n}\n\nul,\nol {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\nul li,\nol li {\n  list-style: none;\n}\n\nimg {\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  transition: all ease-in-out 0.4s;\n  color: #414141;\n  display: block;\n}\n\na:hover {\n  color: #ff735c;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 700;\n  color: #414141;\n}\n\n.pd-section {\n  padding: 30px 0 0;\n}\n\n.cl-btn,\n.border-btn {\n  background-color: #414141;\n  color: #fff;\n  padding: 7px 20px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  position: relative;\n  transition: all ease-in-out 0.4s;\n  font-size: 14px;\n}\n\n.cl-btn:hover,\n.border-btn:hover {\n  opacity: 0.9;\n  background-color: #ff735c;\n  color: #fff;\n  transition: all ease-in-out 0.4s;\n}\n\n.border-btn {\n  background-color: transparent;\n  border: 1px solid #414141;\n}\n\n.cl-header .title {\n  margin-bottom: 15px;\n  font-size: 16px;\n  color: #000000;\n}\n\n.form-group {\n  margin-bottom: 22px;\n  position: relative;\n}\n\n.form-control,\ninput[type=\"checkbox\"] {\n  border-color: #B1B1B1;\n  padding: 6px 25px 6px 10px;\n  border-radius: 5px;\n}\n\n.form-control:focus,\ninput[type=\"checkbox\"]:focus {\n  box-shadow: none;\n  border-color: #000000;\n}\n\n.form-control::-moz-placeholder, input[type=\"checkbox\"]::-moz-placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-control::placeholder,\ninput[type=\"checkbox\"]::placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-group.d-flex {\n  align-items: center;\n}\n\n.form-group.d-flex label {\n  min-width: 26%;\n  text-align: center;\n  margin-right: 15px;\n  font-size: 14px;\n  font-weight: 500;\n}\n\n.login-form .form-control {\n  padding: 11px 25px 11px 10px;\n  border-radius: 10px;\n}\n\n.remember {\n  color: #989898;\n  margin-left: 8px;\n  font-size: 14px;\n}\n\n.wrapper-content {\n  width: 87%;\n  transition: all ease-in-out 0.4s;\n  float: right;\n}\n\n.same-bg {\n  background-color: #F9F9F9;\n  border-radius: 10px;\n  padding: 15px;\n}\n\n.container {\n  padding: 0 24px;\n}\n\n.required {\n  color: #dd0b0b;\n}\n\n.cl-navigation {\n  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);\n}\n\n.cl-navigation .hamburger {\n  cursor: pointer;\n  width: 35px;\n}\n\n.cl-navigation .hamburger:focus {\n  outline: none;\n}\n\n.cl-navigation .hamburger span {\n  border-radius: 3px;\n  width: 20px;\n  height: 2px;\n  background-color: #414141;\n  display: block;\n  margin: 5px 1px;\n  transition: all ease-in-out 0.4s;\n}\n\n.cl-navigation .hamburger span:nth-child(2) {\n  width: 15px;\n}\n\n.cl-navigation .hamburger span:nth-child(3) {\n  width: 10px;\n}\n\n.cl-navigation .hamburger.show {\n  background-color: transparent;\n  outline: none;\n  border: none;\n}\n\n.cl-navigation .hamburger.show span:nth-child(1) {\n  display: none;\n  opacity: 0;\n}\n\n.cl-navigation .hamburger.show span:nth-child(2) {\n  transform: rotate(45deg);\n  margin: -1px;\n}\n\n.cl-navigation .hamburger.show span:nth-child(3) {\n  transform: rotate(-45deg);\n  margin: 0px -1px;\n  width: 15px;\n}\n\n.cl-navigation .nav-link {\n  color: #000000;\n  font-weight: 500;\n  font-size: 16px;\n}\n\n.cl-navigation .nav-link:hover {\n  color: #ff735c;\n}\n\n.cl-navigation .nav-right li {\n  display: inline-block;\n  margin-right: 25px;\n}\n\n.cl-navigation .nav-right li:last-child {\n  margin-right: 0;\n}\n\n.cl-navigation .nav-right .item.pos {\n  background-color: #414141;\n  padding: 4px 10px;\n  border-radius: 5px;\n}\n\n.cl-navigation .nav-right .item.pos img {\n  width: 15px;\n}\n\n.cl-navigation .nav-right .item.pos span {\n  font-size: 12px;\n  font-weight: 500;\n  color: #fff;\n  margin-left: 4px;\n}\n\n.cl-navigation .nav-right .item.pos:hover {\n  background-color: #ff735c;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6041,7 +6655,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".App {\n  border-radius: 10px 10px 10px 0;\n}\n\nbody {\n  font-size: 16px;\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 400;\n  color: #000000;\n}\n\nul,\nol {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\nul li,\nol li {\n  list-style: none;\n}\n\nimg {\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  transition: all ease-in-out 0.4s;\n  color: #414141;\n  display: block;\n}\n\na:hover {\n  color: #ff735c;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 700;\n  color: #414141;\n}\n\n.pd-section {\n  padding: 30px 0 0;\n}\n\n.cl-btn,\n.border-btn {\n  background-color: #414141;\n  color: #fff;\n  padding: 7px 20px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  position: relative;\n  transition: all ease-in-out 0.4s;\n  font-size: 14px;\n}\n\n.cl-btn:hover,\n.border-btn:hover {\n  opacity: 0.9;\n  background-color: #ff735c;\n  color: #fff;\n  transition: all ease-in-out 0.4s;\n}\n\n.border-btn {\n  background-color: transparent;\n  border: 1px solid #414141;\n}\n\n.cl-header .title {\n  margin-bottom: 15px;\n  font-size: 16px;\n  color: #000000;\n}\n\n.form-group {\n  margin-bottom: 22px;\n  position: relative;\n}\n\n.form-control,\ninput[type=\"checkbox\"] {\n  border-color: #B1B1B1;\n  padding: 6px 25px 6px 10px;\n  border-radius: 5px;\n}\n\n.form-control:focus,\ninput[type=\"checkbox\"]:focus {\n  box-shadow: none;\n  border-color: #000000;\n}\n\n.form-control::-moz-placeholder, input[type=\"checkbox\"]::-moz-placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-control::placeholder,\ninput[type=\"checkbox\"]::placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-group.d-flex {\n  align-items: center;\n}\n\n.form-group.d-flex label {\n  min-width: 26%;\n  text-align: center;\n  margin-right: 15px;\n  font-size: 14px;\n  font-weight: 500;\n}\n\n.login-form .form-control {\n  padding: 11px 25px 11px 10px;\n  border-radius: 10px;\n}\n\n.remember {\n  color: #989898;\n  margin-left: 8px;\n  font-size: 14px;\n}\n\n.wrapper-content {\n  width: 86%;\n  transition: all ease-in-out 0.4s;\n  float: right;\n}\n\n.same-bg {\n  background-color: #F9F9F9;\n  border-radius: 10px;\n  padding: 15px;\n}\n\n.container {\n  padding: 0 24px;\n}\n\n.required {\n  color: #dd0b0b;\n}\n\n.fact-wrap {\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);\n  padding: 15px;\n  transition: all ease-in-out 0.4s;\n  background-color: #fff;\n  border-radius: 3px;\n  padding: 0;\n  color: #fff;\n  border-radius: 10px;\n  background-color: #414141;\n}\n\n.fact-wrap:hover {\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);\n  transition: all ease-in-out 0.4s;\n}\n\n.fact-wrap .title, .fact-wrap .numb {\n  color: #fff;\n  font-weight: 600;\n}\n\n.fact-wrap .viewmore {\n  font-weight: 600;\n  text-align: center;\n  color: #fff;\n  padding: 8px 15px;\n  border-radius: 0 0 10px 10px;\n  font-size: 14px;\n  background-color: #454545;\n}\n\n.fact-wrap .viewmore i {\n  font-size: 8px;\n}\n\n.fact-wrap.b-blue {\n  background-color: #00CACA;\n}\n\n.fact-wrap.b-blue .viewmore {\n  background-color: #2EE4E4;\n}\n\n.fact-wrap.b-red {\n  background-color: #EA044E;\n}\n\n.fact-wrap.b-red .viewmore {\n  background-color: #DB386C;\n}\n\n.fact-wrap.b-darkblue {\n  background-color: #1F51FF;\n}\n\n.fact-wrap.b-darkblue .viewmore {\n  background-color: #3A5CD4;\n}\n\n.fact-wrap.b-green {\n  background-color: #0ACE2A;\n}\n\n.fact-wrap.b-green .viewmore {\n  background-color: #31DC4D;\n}\n\n.fact-wrap .fact-content {\n  padding: 30px 20px;\n  display: flex;\n  align-items: center;\n}\n\n.fact-wrap .fact-content .icon {\n  font-size: 40px;\n  margin-left: auto;\n  transition: all ease-in-out 0.4s;\n}\n\n.fact-wrap:hover .fact-content .icon {\n  transform: scale(1.1);\n  opacity: 0.8;\n}\n\n.fact-wrap:hover .viewmore {\n  opacity: 0.8;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  font-size: 16px;\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 400;\n  color: #000000;\n}\n\nul,\nol {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\nul li,\nol li {\n  list-style: none;\n}\n\nimg {\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  transition: all ease-in-out 0.4s;\n  color: #414141;\n  display: block;\n}\n\na:hover {\n  color: #ff735c;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 700;\n  color: #414141;\n}\n\n.pd-section {\n  padding: 30px 0 0;\n}\n\n.cl-btn,\n.border-btn {\n  background-color: #414141;\n  color: #fff;\n  padding: 7px 20px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  position: relative;\n  transition: all ease-in-out 0.4s;\n  font-size: 14px;\n}\n\n.cl-btn:hover,\n.border-btn:hover {\n  opacity: 0.9;\n  background-color: #ff735c;\n  color: #fff;\n  transition: all ease-in-out 0.4s;\n}\n\n.border-btn {\n  background-color: transparent;\n  border: 1px solid #414141;\n}\n\n.cl-header .title {\n  margin-bottom: 15px;\n  font-size: 16px;\n  color: #000000;\n}\n\n.form-group {\n  margin-bottom: 22px;\n  position: relative;\n}\n\n.form-control,\ninput[type=\"checkbox\"] {\n  border-color: #B1B1B1;\n  padding: 6px 25px 6px 10px;\n  border-radius: 5px;\n}\n\n.form-control:focus,\ninput[type=\"checkbox\"]:focus {\n  box-shadow: none;\n  border-color: #000000;\n}\n\n.form-control::-moz-placeholder, input[type=\"checkbox\"]::-moz-placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-control::placeholder,\ninput[type=\"checkbox\"]::placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-group.d-flex {\n  align-items: center;\n}\n\n.form-group.d-flex label {\n  min-width: 26%;\n  text-align: center;\n  margin-right: 15px;\n  font-size: 14px;\n  font-weight: 500;\n}\n\n.login-form .form-control {\n  padding: 11px 25px 11px 10px;\n  border-radius: 10px;\n}\n\n.remember {\n  color: #989898;\n  margin-left: 8px;\n  font-size: 14px;\n}\n\n.wrapper-content {\n  width: 87%;\n  transition: all ease-in-out 0.4s;\n  float: right;\n}\n\n.same-bg {\n  background-color: #F9F9F9;\n  border-radius: 10px;\n  padding: 15px;\n}\n\n.container {\n  padding: 0 24px;\n}\n\n.required {\n  color: #dd0b0b;\n}\n\n.fact-wrap {\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);\n  padding: 15px;\n  transition: all ease-in-out 0.4s;\n  background-color: #fff;\n  border-radius: 3px;\n  padding: 0;\n  color: #fff;\n  border-radius: 10px;\n  background-color: #414141;\n}\n\n.fact-wrap:hover {\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);\n  transition: all ease-in-out 0.4s;\n}\n\n.fact-wrap .title, .fact-wrap .numb {\n  color: #fff;\n  font-weight: 600;\n}\n\n.fact-wrap .viewmore {\n  font-weight: 600;\n  text-align: center;\n  color: #fff;\n  padding: 8px 15px;\n  border-radius: 0 0 10px 10px;\n  font-size: 14px;\n  background-color: #454545;\n}\n\n.fact-wrap .viewmore i {\n  font-size: 8px;\n}\n\n.fact-wrap.b-blue {\n  background-color: #00CACA;\n}\n\n.fact-wrap.b-blue .viewmore {\n  background-color: #2EE4E4;\n}\n\n.fact-wrap.b-red {\n  background-color: #EA044E;\n}\n\n.fact-wrap.b-red .viewmore {\n  background-color: #DB386C;\n}\n\n.fact-wrap.b-darkblue {\n  background-color: #1F51FF;\n}\n\n.fact-wrap.b-darkblue .viewmore {\n  background-color: #3A5CD4;\n}\n\n.fact-wrap.b-green {\n  background-color: #0ACE2A;\n}\n\n.fact-wrap.b-green .viewmore {\n  background-color: #31DC4D;\n}\n\n.fact-wrap .fact-content {\n  padding: 30px 20px;\n  display: flex;\n  align-items: center;\n}\n\n.fact-wrap .fact-content .icon {\n  font-size: 40px;\n  margin-left: auto;\n  transition: all ease-in-out 0.4s;\n}\n\n.fact-wrap:hover .fact-content .icon {\n  transform: scale(1.1);\n  opacity: 0.8;\n}\n\n.fact-wrap:hover .viewmore {\n  opacity: 0.8;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6089,31 +6703,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".App {\n  border-radius: 10px 10px 10px 0;\n}\n\nbody {\n  font-size: 16px;\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 400;\n  color: #000000;\n}\n\nul,\nol {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\nul li,\nol li {\n  list-style: none;\n}\n\nimg {\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  transition: all ease-in-out 0.4s;\n  color: #414141;\n  display: block;\n}\n\na:hover {\n  color: #ff735c;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 700;\n  color: #414141;\n}\n\n.pd-section {\n  padding: 30px 0 0;\n}\n\n.cl-btn,\n.border-btn {\n  background-color: #414141;\n  color: #fff;\n  padding: 7px 20px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  position: relative;\n  transition: all ease-in-out 0.4s;\n  font-size: 14px;\n}\n\n.cl-btn:hover,\n.border-btn:hover {\n  opacity: 0.9;\n  background-color: #ff735c;\n  color: #fff;\n  transition: all ease-in-out 0.4s;\n}\n\n.border-btn {\n  background-color: transparent;\n  border: 1px solid #414141;\n}\n\n.cl-header .title {\n  margin-bottom: 15px;\n  font-size: 16px;\n  color: #000000;\n}\n\n.form-group {\n  margin-bottom: 22px;\n  position: relative;\n}\n\n.form-control,\ninput[type=\"checkbox\"] {\n  border-color: #B1B1B1;\n  padding: 6px 25px 6px 10px;\n  border-radius: 5px;\n}\n\n.form-control:focus,\ninput[type=\"checkbox\"]:focus {\n  box-shadow: none;\n  border-color: #000000;\n}\n\n.form-control::-moz-placeholder, input[type=\"checkbox\"]::-moz-placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-control::placeholder,\ninput[type=\"checkbox\"]::placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-group.d-flex {\n  align-items: center;\n}\n\n.form-group.d-flex label {\n  min-width: 26%;\n  text-align: center;\n  margin-right: 15px;\n  font-size: 14px;\n  font-weight: 500;\n}\n\n.login-form .form-control {\n  padding: 11px 25px 11px 10px;\n  border-radius: 10px;\n}\n\n.remember {\n  color: #989898;\n  margin-left: 8px;\n  font-size: 14px;\n}\n\n.wrapper-content {\n  width: 86%;\n  transition: all ease-in-out 0.4s;\n  float: right;\n}\n\n.same-bg {\n  background-color: #F9F9F9;\n  border-radius: 10px;\n  padding: 15px;\n}\n\n.container {\n  padding: 0 24px;\n}\n\n.required {\n  color: #dd0b0b;\n}\n\n.widget-area.leftsidebar {\n  background: #414141;\n  color: #fff;\n  left: 0;\n  min-height: 100%;\n  position: fixed;\n  top: 0;\n  width: 14%;\n  transition: all ease-in-out 0.5s;\n  z-index: 9;\n  min-height: 100vh;\n  border-radius: 10px 0 0 10px;\n}\n\n.cl-sidebar .user-info {\n  text-align: center;\n  margin: 50px 0;\n}\n\n.cl-sidebar .user-info figure img {\n  max-width: 80px;\n  height: 80px;\n  border-radius: 100%;\n  border: 2px solid #B9B9B9;\n  padding: 5px;\n  width: 100%;\n}\n\n.cl-sidebar .user-info .title {\n  color: #fff;\n  font-size: 16px;\n  font-weight: 600;\n  margin-bottom: 0;\n}\n\n.cl-sidebar .user-info small {\n  font-size: 14px;\n  font-weight: 400;\n  color: #0DA653;\n}\n\n.cl-sidemenu .menu-item {\n  font-weight: 700;\n  font-size: 16px;\n  color: #fff;\n  padding: 4px 15px;\n  display: block;\n}\n\n.cl-sidemenu .menu-item:hover {\n  background: #181818;\n}\n\n.cl-sidemenu .icon {\n  margin-right: 8px;\n}\n\n.cl-sidemenu .accordion-item,\n.cl-sidemenu .accordion-button {\n  background-color: #414141;\n  color: #8D8F93;\n  border: none;\n  box-shadow: none;\n  font-weight: 500;\n  border-radius: 0;\n}\n\n.cl-sidemenu .accordion-item a,\n.cl-sidemenu .accordion-button a {\n  color: #fff;\n  padding: 4px 10px 4px 30px;\n}\n\n.cl-sidemenu .accordion-item a:hover,\n.cl-sidemenu .accordion-button a:hover {\n  background-color: #414141;\n}\n\n.cl-sidemenu .accordion-item .accordion-button,\n.cl-sidemenu .accordion-button .accordion-button {\n  padding: 4px 15px 5px 0;\n  position: relative;\n}\n\n.cl-sidemenu .accordion-item .accordion-button:hover,\n.cl-sidemenu .accordion-button .accordion-button:hover {\n  background: #181818;\n}\n\n.cl-sidemenu .accordion-item .accordion-button:focus,\n.cl-sidemenu .accordion-button .accordion-button:focus {\n  box-shadow: none;\n}\n\n.cl-sidemenu .accordion-item .accordion-button:after,\n.cl-sidemenu .accordion-button .accordion-button:after {\n  width: 10px;\n  height: 10px;\n  line-height: 10px;\n  text-align: center;\n  color: #fff;\n  background-image: none;\n  content: \"\\f104\";\n  font-family: \"FontAwesome\";\n  position: absolute;\n  right: 0;\n}\n\n.cl-sidemenu .accordion-item:hover,\n.cl-sidemenu .accordion-button:hover {\n  background-color: #181818;\n}\n\n.cl-sidemenu .accordion-item:hover .accordion-button,\n.cl-sidemenu .accordion-button:hover .accordion-button {\n  background-color: #181818;\n}\n\n.cl-sidemenu .accordion-body {\n  padding: 0;\n}\n\n.hide-sidebar .cl-sidemenu .accordion-item .accordion-button:after,\n.hide-sidebar .cl-sidemenu .accordion-button .accordion-button:after {\n  display: none;\n}\n\n.hide-sidebar .leftsidebar {\n  width: 80px;\n  text-align: center;\n  transition: all ease-in-out 0.5s;\n}\n\n.hide-sidebar .leftsidebar .cl-sidemenu .icon {\n  margin-right: 3px;\n}\n\n.hide-sidebar .leftsidebar .cl-sidebar .user-info figure img {\n  width: 36px;\n  height: 36px;\n}\n\n.hide-sidebar .leftsidebar .cl-sidebar .user-info .user-name {\n  display: none;\n}\n\n.hide-sidebar .leftsidebar .cl-sidebar span {\n  display: none;\n}\n\n.hide-sidebar .leftsidebar .cl-sidebar .accordion-button {\n  display: block;\n  padding: 5px 0;\n  text-align: center;\n}\n\n.hide-sidebar .leftsidebar .cl-sidebar .accordion-button .icon {\n  text-align: center;\n  margin-right: 0;\n}\n\n.hide-sidebar .leftsidebar .cl-sidebar .accordion-item {\n  position: relative;\n}\n\n.hide-sidebar .leftsidebar .cl-sidebar .accordion-item a {\n  padding: 5px 10px;\n}\n\n.hide-sidebar .wrapper-content {\n  width: calc(100% - 80px);\n}\n\n@media only screen and (max-width: 991px) {\n  .widget-area.leftsidebar {\n    left: -300px;\n  }\n  .wrapper-content {\n    margin-left: 20px;\n  }\n  .hide-dashboard .widget-area.leftsidebar {\n    left: 0;\n  }\n}\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/Component/Dashboard/Table/Table.scss":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/Component/Dashboard/Table/Table.scss ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, ".App {\n  border-radius: 10px 10px 10px 0;\n}\n\nbody {\n  font-size: 16px;\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 400;\n  color: #000000;\n}\n\nul,\nol {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\nul li,\nol li {\n  list-style: none;\n}\n\nimg {\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  transition: all ease-in-out 0.4s;\n  color: #414141;\n  display: block;\n}\n\na:hover {\n  color: #ff735c;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 700;\n  color: #414141;\n}\n\n.pd-section {\n  padding: 30px 0 0;\n}\n\n.cl-btn,\n.border-btn {\n  background-color: #414141;\n  color: #fff;\n  padding: 7px 20px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  position: relative;\n  transition: all ease-in-out 0.4s;\n  font-size: 14px;\n}\n\n.cl-btn:hover,\n.border-btn:hover {\n  opacity: 0.9;\n  background-color: #ff735c;\n  color: #fff;\n  transition: all ease-in-out 0.4s;\n}\n\n.border-btn {\n  background-color: transparent;\n  border: 1px solid #414141;\n}\n\n.cl-header .title {\n  margin-bottom: 15px;\n  font-size: 16px;\n  color: #000000;\n}\n\n.form-group {\n  margin-bottom: 22px;\n  position: relative;\n}\n\n.form-control,\ninput[type=\"checkbox\"] {\n  border-color: #B1B1B1;\n  padding: 6px 25px 6px 10px;\n  border-radius: 5px;\n}\n\n.form-control:focus,\ninput[type=\"checkbox\"]:focus {\n  box-shadow: none;\n  border-color: #000000;\n}\n\n.form-control::-moz-placeholder, input[type=\"checkbox\"]::-moz-placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-control::placeholder,\ninput[type=\"checkbox\"]::placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-group.d-flex {\n  align-items: center;\n}\n\n.form-group.d-flex label {\n  min-width: 26%;\n  text-align: center;\n  margin-right: 15px;\n  font-size: 14px;\n  font-weight: 500;\n}\n\n.login-form .form-control {\n  padding: 11px 25px 11px 10px;\n  border-radius: 10px;\n}\n\n.remember {\n  color: #989898;\n  margin-left: 8px;\n  font-size: 14px;\n}\n\n.wrapper-content {\n  width: 86%;\n  transition: all ease-in-out 0.4s;\n  float: right;\n}\n\n.same-bg {\n  background-color: #F9F9F9;\n  border-radius: 10px;\n  padding: 15px;\n}\n\n.container {\n  padding: 0 24px;\n}\n\n.required {\n  color: #dd0b0b;\n}\n\n.cl-table {\n  font-size: 14px;\n}\n\n.cl-table table {\n  text-align: center;\n}\n\n.cl-table .btn {\n  font-size: 12px;\n  float: right;\n}\n\n.cl-table thead th {\n  color: #A2A2A2;\n  font-weight: 400;\n}\n\n.cl-table tbody td {\n  color: #000000;\n}\n\n.cl-table tbody tr:last-child td {\n  border: none;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  font-size: 16px;\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 400;\n  color: #000000;\n}\n\nul,\nol {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\nul li,\nol li {\n  list-style: none;\n}\n\nimg {\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  transition: all ease-in-out 0.4s;\n  color: #414141;\n  display: block;\n}\n\na:hover {\n  color: #ff735c;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 700;\n  color: #414141;\n}\n\n.pd-section {\n  padding: 30px 0 0;\n}\n\n.cl-btn,\n.border-btn {\n  background-color: #414141;\n  color: #fff;\n  padding: 7px 20px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  position: relative;\n  transition: all ease-in-out 0.4s;\n  font-size: 14px;\n}\n\n.cl-btn:hover,\n.border-btn:hover {\n  opacity: 0.9;\n  background-color: #ff735c;\n  color: #fff;\n  transition: all ease-in-out 0.4s;\n}\n\n.border-btn {\n  background-color: transparent;\n  border: 1px solid #414141;\n}\n\n.cl-header .title {\n  margin-bottom: 15px;\n  font-size: 16px;\n  color: #000000;\n}\n\n.form-group {\n  margin-bottom: 22px;\n  position: relative;\n}\n\n.form-control,\ninput[type=\"checkbox\"] {\n  border-color: #B1B1B1;\n  padding: 6px 25px 6px 10px;\n  border-radius: 5px;\n}\n\n.form-control:focus,\ninput[type=\"checkbox\"]:focus {\n  box-shadow: none;\n  border-color: #000000;\n}\n\n.form-control::-moz-placeholder, input[type=\"checkbox\"]::-moz-placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-control::placeholder,\ninput[type=\"checkbox\"]::placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-group.d-flex {\n  align-items: center;\n}\n\n.form-group.d-flex label {\n  min-width: 26%;\n  text-align: center;\n  margin-right: 15px;\n  font-size: 14px;\n  font-weight: 500;\n}\n\n.login-form .form-control {\n  padding: 11px 25px 11px 10px;\n  border-radius: 10px;\n}\n\n.remember {\n  color: #989898;\n  margin-left: 8px;\n  font-size: 14px;\n}\n\n.wrapper-content {\n  width: 87%;\n  transition: all ease-in-out 0.4s;\n  float: right;\n}\n\n.same-bg {\n  background-color: #F9F9F9;\n  border-radius: 10px;\n  padding: 15px;\n}\n\n.container {\n  padding: 0 24px;\n}\n\n.required {\n  color: #dd0b0b;\n}\n\n.widget-area.leftsidebar {\n  background: #414141;\n  color: #fff;\n  left: 0;\n  min-height: 100%;\n  position: fixed;\n  top: 0;\n  width: 13%;\n  transition: all ease-in-out 0.5s;\n  z-index: 9;\n  min-height: 100vh;\n}\n\n.cl-sidebar .user-info {\n  text-align: center;\n  margin: 20px 0;\n}\n\n.cl-sidebar .user-info figure img {\n  max-width: 80px;\n  height: 80px;\n  border-radius: 100%;\n  border: 2px solid #B9B9B9;\n  padding: 5px;\n  width: 100%;\n}\n\n.cl-sidebar .user-info .title {\n  color: #fff;\n  font-size: 16px;\n  font-weight: 600;\n  margin-bottom: 0;\n}\n\n.cl-sidebar .user-info small {\n  font-size: 14px;\n  font-weight: 400;\n  color: #0DA653;\n}\n\n.cl-sidemenu .menu-item {\n  font-weight: 700;\n  font-size: 16px;\n  color: #fff;\n  padding: 4px 15px;\n  display: block;\n}\n\n.cl-sidemenu .menu-item:hover {\n  background: #181818;\n}\n\n.cl-sidemenu .icon {\n  margin-right: 8px;\n}\n\n.cl-sidemenu .accordion-item,\n.cl-sidemenu .accordion-button {\n  background-color: #414141;\n  color: #8D8F93;\n  border: none;\n  box-shadow: none;\n  font-weight: 500;\n  border-radius: 0;\n}\n\n.cl-sidemenu .accordion-item .accordion-button,\n.cl-sidemenu .accordion-button .accordion-button {\n  background-color: transparent;\n}\n\n.cl-sidemenu .accordion-item a,\n.cl-sidemenu .accordion-button a {\n  color: #fff;\n  padding: 4px 10px 4px 40px;\n  font-size: 13px;\n}\n\n.cl-sidemenu .accordion-item a:hover,\n.cl-sidemenu .accordion-button a:hover {\n  background-color: #414141;\n}\n\n.cl-sidemenu .accordion-item .accordion-button,\n.cl-sidemenu .accordion-button .accordion-button {\n  padding: 4px 15px 5px 0;\n  position: relative;\n}\n\n.cl-sidemenu .accordion-item .accordion-button:hover,\n.cl-sidemenu .accordion-button .accordion-button:hover {\n  background: transparent;\n}\n\n.cl-sidemenu .accordion-item .accordion-button:focus,\n.cl-sidemenu .accordion-button .accordion-button:focus {\n  box-shadow: none;\n}\n\n.cl-sidemenu .accordion-item .accordion-button:after,\n.cl-sidemenu .accordion-button .accordion-button:after {\n  width: 10px;\n  height: 10px;\n  line-height: 10px;\n  text-align: center;\n  color: #fff;\n  background-image: none;\n  content: \"\\f104\";\n  font-family: \"FontAwesome\";\n  position: absolute;\n  right: 0;\n}\n\n.cl-sidemenu .accordion-item:hover,\n.cl-sidemenu .accordion-button:hover {\n  background-color: #181818;\n}\n\n.cl-sidemenu .accordion-item:hover .accordion-button,\n.cl-sidemenu .accordion-button:hover .accordion-button {\n  background-color: transparent;\n}\n\n.cl-sidemenu .accordion-item {\n  border-bottom: 1px solid #373737;\n}\n\n.cl-sidemenu .accordion-body {\n  padding: 0;\n}\n\n.hide-sidebar .cl-sidemenu .accordion-item .accordion-button:after,\n.hide-sidebar .cl-sidemenu .accordion-button .accordion-button:after {\n  display: none;\n}\n\n.hide-sidebar .leftsidebar {\n  width: 80px;\n  text-align: center;\n  transition: all ease-in-out 0.5s;\n}\n\n.hide-sidebar .leftsidebar .cl-sidemenu .icon {\n  margin-right: 3px;\n}\n\n.hide-sidebar .leftsidebar .cl-sidebar .user-info figure img {\n  width: 36px;\n  height: 36px;\n}\n\n.hide-sidebar .leftsidebar .cl-sidebar .user-info .user-name {\n  display: none;\n}\n\n.hide-sidebar .leftsidebar .cl-sidebar span {\n  display: none;\n}\n\n.hide-sidebar .leftsidebar .cl-sidebar .accordion-button {\n  display: block;\n  padding: 5px 0;\n  text-align: center;\n}\n\n.hide-sidebar .leftsidebar .cl-sidebar .accordion-button .icon {\n  text-align: center;\n  margin-right: 0;\n}\n\n.hide-sidebar .leftsidebar .cl-sidebar .accordion-item {\n  position: relative;\n}\n\n.hide-sidebar .leftsidebar .cl-sidebar .accordion-item a {\n  padding: 5px 10px;\n}\n\n.hide-sidebar .wrapper-content {\n  width: calc(100% - 80px);\n}\n\n@media only screen and (max-width: 991px) {\n  .widget-area.leftsidebar {\n    left: -300px;\n  }\n  .wrapper-content {\n    margin-left: 20px;\n  }\n  .hide-dashboard .widget-area.leftsidebar {\n    left: 0;\n  }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6137,7 +6727,31 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".App {\n  border-radius: 10px 10px 10px 0;\n}\n\nbody {\n  font-size: 16px;\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 400;\n  color: #000000;\n}\n\nul,\nol {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\nul li,\nol li {\n  list-style: none;\n}\n\nimg {\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  transition: all ease-in-out 0.4s;\n  color: #414141;\n  display: block;\n}\n\na:hover {\n  color: #ff735c;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 700;\n  color: #414141;\n}\n\n.pd-section {\n  padding: 30px 0 0;\n}\n\n.cl-btn,\n.border-btn {\n  background-color: #414141;\n  color: #fff;\n  padding: 7px 20px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  position: relative;\n  transition: all ease-in-out 0.4s;\n  font-size: 14px;\n}\n\n.cl-btn:hover,\n.border-btn:hover {\n  opacity: 0.9;\n  background-color: #ff735c;\n  color: #fff;\n  transition: all ease-in-out 0.4s;\n}\n\n.border-btn {\n  background-color: transparent;\n  border: 1px solid #414141;\n}\n\n.cl-header .title {\n  margin-bottom: 15px;\n  font-size: 16px;\n  color: #000000;\n}\n\n.form-group {\n  margin-bottom: 22px;\n  position: relative;\n}\n\n.form-control,\ninput[type=\"checkbox\"] {\n  border-color: #B1B1B1;\n  padding: 6px 25px 6px 10px;\n  border-radius: 5px;\n}\n\n.form-control:focus,\ninput[type=\"checkbox\"]:focus {\n  box-shadow: none;\n  border-color: #000000;\n}\n\n.form-control::-moz-placeholder, input[type=\"checkbox\"]::-moz-placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-control::placeholder,\ninput[type=\"checkbox\"]::placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-group.d-flex {\n  align-items: center;\n}\n\n.form-group.d-flex label {\n  min-width: 26%;\n  text-align: center;\n  margin-right: 15px;\n  font-size: 14px;\n  font-weight: 500;\n}\n\n.login-form .form-control {\n  padding: 11px 25px 11px 10px;\n  border-radius: 10px;\n}\n\n.remember {\n  color: #989898;\n  margin-left: 8px;\n  font-size: 14px;\n}\n\n.wrapper-content {\n  width: 86%;\n  transition: all ease-in-out 0.4s;\n  float: right;\n}\n\n.same-bg {\n  background-color: #F9F9F9;\n  border-radius: 10px;\n  padding: 15px;\n}\n\n.container {\n  padding: 0 24px;\n}\n\n.required {\n  color: #dd0b0b;\n}\n\n.productSelect-wrap .select-btn li {\n  display: inline-block;\n  background: #F9F9F9;\n  margin-right: 20px;\n  padding: 20px 20px;\n  border-radius: 5px;\n  font-size: 14px;\n  margin-bottom: 25px;\n}\n\n.productSelect-wrap .select-btn li .title {\n  font-size: 14px;\n  font-weight: 500;\n  margin-bottom: 3px;\n  color: #000000;\n}\n\n.productSelect-wrap .select-btn li span {\n  display: block;\n  color: #8D8F93;\n}\n\n.productSelect-wrap .select-btn li:last-child {\n  margin-right: 0;\n}\n\n.productSelect-wrap .cl-table .icon {\n  color: #FF0000;\n  font-size: 20px;\n  cursor: pointer;\n}\n\n.productSelect-wrap .total label {\n  font-weight: 600;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  font-size: 16px;\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 400;\n  color: #000000;\n}\n\nul,\nol {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\nul li,\nol li {\n  list-style: none;\n}\n\nimg {\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  transition: all ease-in-out 0.4s;\n  color: #414141;\n  display: block;\n}\n\na:hover {\n  color: #ff735c;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 700;\n  color: #414141;\n}\n\n.pd-section {\n  padding: 30px 0 0;\n}\n\n.cl-btn,\n.border-btn {\n  background-color: #414141;\n  color: #fff;\n  padding: 7px 20px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  position: relative;\n  transition: all ease-in-out 0.4s;\n  font-size: 14px;\n}\n\n.cl-btn:hover,\n.border-btn:hover {\n  opacity: 0.9;\n  background-color: #ff735c;\n  color: #fff;\n  transition: all ease-in-out 0.4s;\n}\n\n.border-btn {\n  background-color: transparent;\n  border: 1px solid #414141;\n}\n\n.cl-header .title {\n  margin-bottom: 15px;\n  font-size: 16px;\n  color: #000000;\n}\n\n.form-group {\n  margin-bottom: 22px;\n  position: relative;\n}\n\n.form-control,\ninput[type=\"checkbox\"] {\n  border-color: #B1B1B1;\n  padding: 6px 25px 6px 10px;\n  border-radius: 5px;\n}\n\n.form-control:focus,\ninput[type=\"checkbox\"]:focus {\n  box-shadow: none;\n  border-color: #000000;\n}\n\n.form-control::-moz-placeholder, input[type=\"checkbox\"]::-moz-placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-control::placeholder,\ninput[type=\"checkbox\"]::placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-group.d-flex {\n  align-items: center;\n}\n\n.form-group.d-flex label {\n  min-width: 26%;\n  text-align: center;\n  margin-right: 15px;\n  font-size: 14px;\n  font-weight: 500;\n}\n\n.login-form .form-control {\n  padding: 11px 25px 11px 10px;\n  border-radius: 10px;\n}\n\n.remember {\n  color: #989898;\n  margin-left: 8px;\n  font-size: 14px;\n}\n\n.wrapper-content {\n  width: 87%;\n  transition: all ease-in-out 0.4s;\n  float: right;\n}\n\n.same-bg {\n  background-color: #F9F9F9;\n  border-radius: 10px;\n  padding: 15px;\n}\n\n.container {\n  padding: 0 24px;\n}\n\n.required {\n  color: #dd0b0b;\n}\n\n.productSelect-wrap .select-btn li {\n  display: inline-block;\n  background: #F9F9F9;\n  margin-right: 20px;\n  padding: 20px 20px;\n  border-radius: 5px;\n  font-size: 14px;\n  margin-bottom: 25px;\n}\n\n.productSelect-wrap .select-btn li .title {\n  font-size: 14px;\n  font-weight: 500;\n  margin-bottom: 3px;\n  color: #000000;\n}\n\n.productSelect-wrap .select-btn li span {\n  display: block;\n  color: #8D8F93;\n}\n\n.productSelect-wrap .select-btn li:last-child {\n  margin-right: 0;\n}\n\n.productSelect-wrap .cl-table .icon {\n  color: #FF0000;\n  font-size: 20px;\n  cursor: pointer;\n}\n\n.productSelect-wrap .total label {\n  font-weight: 600;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/Component/InnerPage/Saleform/Saleform.scss":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/Component/InnerPage/Saleform/Saleform.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6161,7 +6775,31 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".App {\n  border-radius: 10px 10px 10px 0;\n}\n\nbody {\n  font-size: 16px;\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 400;\n  color: #000000;\n}\n\nul,\nol {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\nul li,\nol li {\n  list-style: none;\n}\n\nimg {\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  transition: all ease-in-out 0.4s;\n  color: #414141;\n  display: block;\n}\n\na:hover {\n  color: #ff735c;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 700;\n  color: #414141;\n}\n\n.pd-section {\n  padding: 30px 0 0;\n}\n\n.cl-btn,\n.border-btn {\n  background-color: #414141;\n  color: #fff;\n  padding: 7px 20px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  position: relative;\n  transition: all ease-in-out 0.4s;\n  font-size: 14px;\n}\n\n.cl-btn:hover,\n.border-btn:hover {\n  opacity: 0.9;\n  background-color: #ff735c;\n  color: #fff;\n  transition: all ease-in-out 0.4s;\n}\n\n.border-btn {\n  background-color: transparent;\n  border: 1px solid #414141;\n}\n\n.cl-header .title {\n  margin-bottom: 15px;\n  font-size: 16px;\n  color: #000000;\n}\n\n.form-group {\n  margin-bottom: 22px;\n  position: relative;\n}\n\n.form-control,\ninput[type=\"checkbox\"] {\n  border-color: #B1B1B1;\n  padding: 6px 25px 6px 10px;\n  border-radius: 5px;\n}\n\n.form-control:focus,\ninput[type=\"checkbox\"]:focus {\n  box-shadow: none;\n  border-color: #000000;\n}\n\n.form-control::-moz-placeholder, input[type=\"checkbox\"]::-moz-placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-control::placeholder,\ninput[type=\"checkbox\"]::placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-group.d-flex {\n  align-items: center;\n}\n\n.form-group.d-flex label {\n  min-width: 26%;\n  text-align: center;\n  margin-right: 15px;\n  font-size: 14px;\n  font-weight: 500;\n}\n\n.login-form .form-control {\n  padding: 11px 25px 11px 10px;\n  border-radius: 10px;\n}\n\n.remember {\n  color: #989898;\n  margin-left: 8px;\n  font-size: 14px;\n}\n\n.wrapper-content {\n  width: 86%;\n  transition: all ease-in-out 0.4s;\n  float: right;\n}\n\n.same-bg {\n  background-color: #F9F9F9;\n  border-radius: 10px;\n  padding: 15px;\n}\n\n.container {\n  padding: 0 24px;\n}\n\n.required {\n  color: #dd0b0b;\n}\n\n.login-form .login-header {\n  margin-bottom: 25px;\n}\n\n.login-form .login-header .title {\n  font-weight: 500;\n  font-size: 36px;\n}\n\n.login-form .login-header strong {\n  display: block;\n  font-weight: 700;\n}\n\n.login-form .flex {\n  justify-content: center;\n  display: flex;\n  align-items: center;\n}\n\n.login-form .form-wrap {\n  padding: 30px;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);\n  padding: 15px;\n  transition: all ease-in-out 0.4s;\n  background-color: #fff;\n  border-radius: 3px;\n  margin-right: 15px;\n}\n\n.login-form .form-wrap:hover {\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);\n  transition: all ease-in-out 0.4s;\n}\n\n.login-form .login-wrap {\n  min-width: 335px;\n}\n\n.login-form .login-wrap .icon {\n  position: absolute;\n  right: 10px;\n  top: 18px;\n  font-size: 14px;\n  color: #989898;\n}\n\n.login-form .login-wrap .fpw {\n  margin-left: auto;\n  font-size: 14px;\n  text-decoration: underline;\n}\n\n.login-form .login-wrap .btn {\n  width: 100%;\n  padding: 8px 15px;\n  font-size: 20px;\n}\n\n.login-form .form-img {\n  width: 45%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  font-size: 16px;\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 400;\n  color: #000000;\n}\n\nul,\nol {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\nul li,\nol li {\n  list-style: none;\n}\n\nimg {\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  transition: all ease-in-out 0.4s;\n  color: #414141;\n  display: block;\n}\n\na:hover {\n  color: #ff735c;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 700;\n  color: #414141;\n}\n\n.pd-section {\n  padding: 30px 0 0;\n}\n\n.cl-btn,\n.border-btn {\n  background-color: #414141;\n  color: #fff;\n  padding: 7px 20px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  position: relative;\n  transition: all ease-in-out 0.4s;\n  font-size: 14px;\n}\n\n.cl-btn:hover,\n.border-btn:hover {\n  opacity: 0.9;\n  background-color: #ff735c;\n  color: #fff;\n  transition: all ease-in-out 0.4s;\n}\n\n.border-btn {\n  background-color: transparent;\n  border: 1px solid #414141;\n}\n\n.cl-header .title {\n  margin-bottom: 15px;\n  font-size: 16px;\n  color: #000000;\n}\n\n.form-group {\n  margin-bottom: 22px;\n  position: relative;\n}\n\n.form-control,\ninput[type=\"checkbox\"] {\n  border-color: #B1B1B1;\n  padding: 6px 25px 6px 10px;\n  border-radius: 5px;\n}\n\n.form-control:focus,\ninput[type=\"checkbox\"]:focus {\n  box-shadow: none;\n  border-color: #000000;\n}\n\n.form-control::-moz-placeholder, input[type=\"checkbox\"]::-moz-placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-control::placeholder,\ninput[type=\"checkbox\"]::placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-group.d-flex {\n  align-items: center;\n}\n\n.form-group.d-flex label {\n  min-width: 26%;\n  text-align: center;\n  margin-right: 15px;\n  font-size: 14px;\n  font-weight: 500;\n}\n\n.login-form .form-control {\n  padding: 11px 25px 11px 10px;\n  border-radius: 10px;\n}\n\n.remember {\n  color: #989898;\n  margin-left: 8px;\n  font-size: 14px;\n}\n\n.wrapper-content {\n  width: 87%;\n  transition: all ease-in-out 0.4s;\n  float: right;\n}\n\n.same-bg {\n  background-color: #F9F9F9;\n  border-radius: 10px;\n  padding: 15px;\n}\n\n.container {\n  padding: 0 24px;\n}\n\n.required {\n  color: #dd0b0b;\n}\n\n.login-form .login-header {\n  margin-bottom: 25px;\n}\n\n.login-form .login-header .title {\n  font-weight: 500;\n  font-size: 36px;\n}\n\n.login-form .login-header strong {\n  display: block;\n  font-weight: 700;\n}\n\n.login-form .flex {\n  justify-content: center;\n  display: flex;\n  align-items: center;\n}\n\n.login-form .form-wrap {\n  padding: 30px;\n  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);\n  padding: 15px;\n  transition: all ease-in-out 0.4s;\n  background-color: #fff;\n  border-radius: 3px;\n  margin-right: 15px;\n}\n\n.login-form .form-wrap:hover {\n  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);\n  transition: all ease-in-out 0.4s;\n}\n\n.login-form .login-wrap {\n  min-width: 335px;\n}\n\n.login-form .login-wrap .icon {\n  position: absolute;\n  right: 10px;\n  top: 18px;\n  font-size: 14px;\n  color: #989898;\n}\n\n.login-form .login-wrap .fpw {\n  margin-left: auto;\n  font-size: 14px;\n  text-decoration: underline;\n}\n\n.login-form .login-wrap .btn {\n  width: 100%;\n  padding: 8px 15px;\n  font-size: 20px;\n}\n\n.login-form .form-img {\n  width: 45%;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/Component/Table/Table.scss":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/Component/Table/Table.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  font-size: 16px;\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 400;\n  color: #000000;\n}\n\nul,\nol {\n  padding-left: 0;\n  margin-bottom: 0;\n}\n\nul li,\nol li {\n  list-style: none;\n}\n\nimg {\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  transition: all ease-in-out 0.4s;\n  color: #414141;\n  display: block;\n}\n\na:hover {\n  color: #ff735c;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Manrope\", sans-serif;\n  font-weight: 700;\n  color: #414141;\n}\n\n.pd-section {\n  padding: 30px 0 0;\n}\n\n.cl-btn,\n.border-btn {\n  background-color: #414141;\n  color: #fff;\n  padding: 7px 20px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  position: relative;\n  transition: all ease-in-out 0.4s;\n  font-size: 14px;\n}\n\n.cl-btn:hover,\n.border-btn:hover {\n  opacity: 0.9;\n  background-color: #ff735c;\n  color: #fff;\n  transition: all ease-in-out 0.4s;\n}\n\n.border-btn {\n  background-color: transparent;\n  border: 1px solid #414141;\n}\n\n.cl-header .title {\n  margin-bottom: 15px;\n  font-size: 16px;\n  color: #000000;\n}\n\n.form-group {\n  margin-bottom: 22px;\n  position: relative;\n}\n\n.form-control,\ninput[type=\"checkbox\"] {\n  border-color: #B1B1B1;\n  padding: 6px 25px 6px 10px;\n  border-radius: 5px;\n}\n\n.form-control:focus,\ninput[type=\"checkbox\"]:focus {\n  box-shadow: none;\n  border-color: #000000;\n}\n\n.form-control::-moz-placeholder, input[type=\"checkbox\"]::-moz-placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-control::placeholder,\ninput[type=\"checkbox\"]::placeholder {\n  font-size: 14px;\n  color: #989898;\n}\n\n.form-group.d-flex {\n  align-items: center;\n}\n\n.form-group.d-flex label {\n  min-width: 26%;\n  text-align: center;\n  margin-right: 15px;\n  font-size: 14px;\n  font-weight: 500;\n}\n\n.login-form .form-control {\n  padding: 11px 25px 11px 10px;\n  border-radius: 10px;\n}\n\n.remember {\n  color: #989898;\n  margin-left: 8px;\n  font-size: 14px;\n}\n\n.wrapper-content {\n  width: 87%;\n  transition: all ease-in-out 0.4s;\n  float: right;\n}\n\n.same-bg {\n  background-color: #F9F9F9;\n  border-radius: 10px;\n  padding: 15px;\n}\n\n.container {\n  padding: 0 24px;\n}\n\n.required {\n  color: #dd0b0b;\n}\n\n.cl-table {\n  font-size: 14px;\n}\n\n.cl-table table {\n  text-align: center;\n}\n\n.cl-table .btn {\n  font-size: 12px;\n  float: right;\n}\n\n.cl-table thead th {\n  color: #A2A2A2;\n  font-weight: 400;\n}\n\n.cl-table tbody td {\n  color: #000000;\n}\n\n.cl-table tbody tr:last-child td {\n  border: none;\n}\n\n.table-list .search-content {\n  justify-content: space-between;\n  align-items: center;\n}\n\n.table-list .select select {\n  background: #e3e3e3;\n  border: 1px solid #e3e3e3;\n  margin: 0 7px;\n  border-radius: 4px;\n  font-weight: 500;\n}\n\n.table-list .select span {\n  margin: 0 5px;\n  font-weight: 500;\n  font-size: 16px;\n  color: #000000;\n}\n\n.table-list .download-doc {\n  display: inline-block;\n  background-color: #337AB7;\n  color: #fff;\n  border-radius: 4px;\n}\n\n.table-list .download-doc .item {\n  display: inline-block;\n  padding: 7px 12px;\n  border-right: 1px solid #fff;\n  font-weight: 500;\n  cursor: pointer;\n}\n\n.table-list .download-doc .item:hover {\n  opacity: 0.7;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -58748,6 +59386,17 @@ function polyfill(Component) {
 
 /***/ }),
 
+/***/ "./node_modules/react-paginate/dist/react-paginate.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-paginate/dist/react-paginate.js ***!
+  \************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+!function(e,t){ true?module.exports=t(__webpack_require__(/*! react */ "./node_modules/react/index.js")):0}(this,(function(__WEBPACK_EXTERNAL_MODULE__98__){return(()=>{var __webpack_modules__={759:(e,t,a)=>{"use strict";a.d(t,{Z:()=>c});var r,o=a(98),_=a.n(o),n=a(697),i=a.n(n);function s(){return s=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var a=arguments[t];for(var r in a)Object.prototype.hasOwnProperty.call(a,r)&&(e[r]=a[r])}return e},s.apply(this,arguments)}e=a.hmd(e),(r="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.enterModule:void 0)&&r(e),"undefined"!=typeof reactHotLoaderGlobal&&reactHotLoaderGlobal.default.signature;var l=function(e){var t=e.breakLabel,a=e.breakClassName,r=e.breakLinkClassName,o=e.breakHandler,n=e.getEventListener,i=a||"break";return _().createElement("li",{className:i},_().createElement("a",s({className:r,role:"button",tabIndex:"0",onKeyPress:o},n(o)),t))};l.propTypes={breakLabel:i().oneOfType([i().string,i().node]),breakClassName:i().string,breakLinkClassName:i().string,breakHandler:i().func.isRequired,getEventListener:i().func.isRequired};var p=l;const c=p;var d,u;(d="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.default:void 0)&&(d.register(l,"BreakView","/home/yoan/work/oss/react-paginate/react_components/BreakView.js"),d.register(p,"default","/home/yoan/work/oss/react-paginate/react_components/BreakView.js")),(u="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.leaveModule:void 0)&&u(e)},770:(e,t,a)=>{"use strict";a.d(t,{Z:()=>c});var r,o=a(98),_=a.n(o),n=a(697),i=a.n(n);function s(){return s=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var a=arguments[t];for(var r in a)Object.prototype.hasOwnProperty.call(a,r)&&(e[r]=a[r])}return e},s.apply(this,arguments)}e=a.hmd(e),(r="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.enterModule:void 0)&&r(e),"undefined"!=typeof reactHotLoaderGlobal&&reactHotLoaderGlobal.default.signature;var l=function(e){var t=e.pageClassName,a=e.pageLinkClassName,r=e.page,o=e.selected,n=e.activeClassName,i=e.activeLinkClassName,l=e.getEventListener,p=e.pageSelectedHandler,c=e.href,d=e.extraAriaContext,u=e.pageLabelBuilder,f=e.rel,g=e.ariaLabel||"Page "+r+(d?" "+d:""),P=null;return o&&(P="page",g=e.ariaLabel||"Page "+r+" is your current page",t=void 0!==t?t+" "+n:n,void 0!==a?void 0!==i&&(a=a+" "+i):a=i),_().createElement("li",{className:t},_().createElement("a",s({rel:f,role:c?void 0:"button",className:a,href:c,tabIndex:o?"-1":"0","aria-label":g,"aria-current":P,onKeyPress:p},l(p)),u(r)))};l.propTypes={pageSelectedHandler:i().func.isRequired,selected:i().bool.isRequired,pageClassName:i().string,pageLinkClassName:i().string,activeClassName:i().string,activeLinkClassName:i().string,extraAriaContext:i().string,href:i().string,ariaLabel:i().string,page:i().number.isRequired,getEventListener:i().func.isRequired,pageLabelBuilder:i().func.isRequired,rel:i().string};var p=l;const c=p;var d,u;(d="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.default:void 0)&&(d.register(l,"PageView","/home/yoan/work/oss/react-paginate/react_components/PageView.js"),d.register(p,"default","/home/yoan/work/oss/react-paginate/react_components/PageView.js")),(u="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.leaveModule:void 0)&&u(e)},214:(module,__webpack_exports__,__nested_webpack_require_3517__)=>{"use strict";__nested_webpack_require_3517__.d(__webpack_exports__,{Z:()=>PaginationBoxView});var react__WEBPACK_IMPORTED_MODULE_0__=__nested_webpack_require_3517__(98),react__WEBPACK_IMPORTED_MODULE_0___default=__nested_webpack_require_3517__.n(react__WEBPACK_IMPORTED_MODULE_0__),prop_types__WEBPACK_IMPORTED_MODULE_1__=__nested_webpack_require_3517__(697),prop_types__WEBPACK_IMPORTED_MODULE_1___default=__nested_webpack_require_3517__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__),_PageView__WEBPACK_IMPORTED_MODULE_2__=__nested_webpack_require_3517__(770),_BreakView__WEBPACK_IMPORTED_MODULE_3__=__nested_webpack_require_3517__(759),_utils__WEBPACK_IMPORTED_MODULE_4__=__nested_webpack_require_3517__(923),enterModule;function _typeof(e){return _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},_typeof(e)}function _extends(){return _extends=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var a=arguments[t];for(var r in a)Object.prototype.hasOwnProperty.call(a,r)&&(e[r]=a[r])}return e},_extends.apply(this,arguments)}function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _defineProperties(e,t){for(var a=0;a<t.length;a++){var r=t[a];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function _createClass(e,t,a){return t&&_defineProperties(e.prototype,t),a&&_defineProperties(e,a),e}function _inherits(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&_setPrototypeOf(e,t)}function _setPrototypeOf(e,t){return _setPrototypeOf=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e},_setPrototypeOf(e,t)}function _createSuper(e){var t=_isNativeReflectConstruct();return function(){var a,r=_getPrototypeOf(e);if(t){var o=_getPrototypeOf(this).constructor;a=Reflect.construct(r,arguments,o)}else a=r.apply(this,arguments);return _possibleConstructorReturn(this,a)}}function _possibleConstructorReturn(e,t){if(t&&("object"===_typeof(t)||"function"==typeof t))return t;if(void 0!==t)throw new TypeError("Derived constructors may only return object or undefined");return _assertThisInitialized(e)}function _assertThisInitialized(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function _isNativeReflectConstruct(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}function _getPrototypeOf(e){return _getPrototypeOf=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)},_getPrototypeOf(e)}function _defineProperty(e,t,a){return t in e?Object.defineProperty(e,t,{value:a,enumerable:!0,configurable:!0,writable:!0}):e[t]=a,e}module=__nested_webpack_require_3517__.hmd(module),enterModule="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.enterModule:void 0,enterModule&&enterModule(module);var __signature__="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.default.signature:function(e){return e},PaginationBoxView=function(_Component){_inherits(PaginationBoxView,_Component);var _super=_createSuper(PaginationBoxView);function PaginationBoxView(e){var t,a;return _classCallCheck(this,PaginationBoxView),_defineProperty(_assertThisInitialized(t=_super.call(this,e)),"handlePreviousPage",(function(e){var a=t.state.selected;t.handleClick(e,null,a>0?a-1:void 0,{isPrevious:!0})})),_defineProperty(_assertThisInitialized(t),"handleNextPage",(function(e){var a=t.state.selected,r=t.props.pageCount;t.handleClick(e,null,a<r-1?a+1:void 0,{isNext:!0})})),_defineProperty(_assertThisInitialized(t),"handlePageSelected",(function(e,a){if(t.state.selected===e)return t.callActiveCallback(e),void t.handleClick(a,null,void 0,{isActive:!0});t.handleClick(a,null,e)})),_defineProperty(_assertThisInitialized(t),"handlePageChange",(function(e){t.state.selected!==e&&(t.setState({selected:e}),t.callCallback(e))})),_defineProperty(_assertThisInitialized(t),"getEventListener",(function(e){return _defineProperty({},t.props.eventListener,e)})),_defineProperty(_assertThisInitialized(t),"handleClick",(function(e,a,r){var o=arguments.length>3&&void 0!==arguments[3]?arguments[3]:{},_=o.isPrevious,n=void 0!==_&&_,i=o.isNext,s=void 0!==i&&i,l=o.isBreak,p=void 0!==l&&l,c=o.isActive,d=void 0!==c&&c;e.preventDefault?e.preventDefault():e.returnValue=!1;var u=t.state.selected,f=t.props.onClick,g=r;if(f){var P=f({index:a,selected:u,nextSelectedPage:r,event:e,isPrevious:n,isNext:s,isBreak:p,isActive:d});if(!1===P)return;Number.isInteger(P)&&(g=P)}void 0!==g&&t.handlePageChange(g)})),_defineProperty(_assertThisInitialized(t),"handleBreakClick",(function(e,a){var r=t.state.selected;t.handleClick(a,e,r<e?t.getForwardJump():t.getBackwardJump(),{isBreak:!0})})),_defineProperty(_assertThisInitialized(t),"callCallback",(function(e){void 0!==t.props.onPageChange&&"function"==typeof t.props.onPageChange&&t.props.onPageChange({selected:e})})),_defineProperty(_assertThisInitialized(t),"callActiveCallback",(function(e){void 0!==t.props.onPageActive&&"function"==typeof t.props.onPageActive&&t.props.onPageActive({selected:e})})),_defineProperty(_assertThisInitialized(t),"getElementPageRel",(function(e){var a=t.state.selected,r=t.props,o=r.nextPageRel,_=r.prevPageRel,n=r.selectedPageRel;return a-1===e?_:a===e?n:a+1===e?o:void 0})),_defineProperty(_assertThisInitialized(t),"pagination",(function(){var e=[],a=t.props,r=a.pageRangeDisplayed,o=a.pageCount,_=a.marginPagesDisplayed,n=a.breakLabel,i=a.breakClassName,s=a.breakLinkClassName,l=t.state.selected;if(o<=r)for(var p=0;p<o;p++)e.push(t.getPageElement(p));else{var c=r/2,d=r-c;l>o-r/2?c=r-(d=o-l):l<r/2&&(d=r-(c=l));var u,f,g=function(e){return t.getPageElement(e)},P=[];for(u=0;u<o;u++){var E=u+1;E<=_||E>o-_||u>=l-c&&u<=l+(0===l&&r>1?d-1:d)?P.push({type:"page",index:u,display:g(u)}):n&&P.length>0&&P[P.length-1].display!==f&&(r>0||_>0)&&(f=react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_BreakView__WEBPACK_IMPORTED_MODULE_3__.Z,{key:u,breakLabel:n,breakClassName:i,breakLinkClassName:s,breakHandler:t.handleBreakClick.bind(null,u),getEventListener:t.getEventListener}),P.push({type:"break",index:u,display:f}))}P.forEach((function(t,a){var r=t;"break"===t.type&&P[a-1]&&"page"===P[a-1].type&&P[a+1]&&"page"===P[a+1].type&&P[a+1].index-P[a-1].index<=2&&(r={type:"page",index:t.index,display:g(t.index)}),e.push(r.display)}))}return e})),void 0!==e.initialPage&&void 0!==e.forcePage&&console.warn("(react-paginate): Both initialPage (".concat(e.initialPage,") and forcePage (").concat(e.forcePage,") props are provided, which is discouraged.")+" Use exclusively forcePage prop for a controlled component.\nSee https://reactjs.org/docs/forms.html#controlled-components"),a=e.initialPage?e.initialPage:e.forcePage?e.forcePage:0,t.state={selected:a},t}return _createClass(PaginationBoxView,[{key:"componentDidMount",value:function(){var e=this.props,t=e.initialPage,a=e.disableInitialCallback,r=e.extraAriaContext,o=e.pageCount,_=e.forcePage;void 0===t||a||this.callCallback(t),r&&console.warn("DEPRECATED (react-paginate): The extraAriaContext prop is deprecated. You should now use the ariaLabelBuilder instead."),Number.isInteger(o)||console.warn("(react-paginate): The pageCount prop value provided is not an integer (".concat(o,"). Did you forget a Math.ceil()?")),void 0!==t&&t>o-1&&console.warn("(react-paginate): The initialPage prop provided is greater than the maximum page index from pageCount prop (".concat(t," > ").concat(o-1,").")),void 0!==_&&_>o-1&&console.warn("(react-paginate): The forcePage prop provided is greater than the maximum page index from pageCount prop (".concat(_," > ").concat(o-1,")."))}},{key:"componentDidUpdate",value:function(e){void 0!==this.props.forcePage&&this.props.forcePage!==e.forcePage&&(this.props.forcePage>this.props.pageCount-1&&console.warn("(react-paginate): The forcePage prop provided is greater than the maximum page index from pageCount prop (".concat(this.props.forcePage," > ").concat(this.props.pageCount-1,").")),this.setState({selected:this.props.forcePage})),Number.isInteger(e.pageCount)&&!Number.isInteger(this.props.pageCount)&&console.warn("(react-paginate): The pageCount prop value provided is not an integer (".concat(this.props.pageCount,"). Did you forget a Math.ceil()?"))}},{key:"getForwardJump",value:function(){var e=this.state.selected,t=this.props,a=t.pageCount,r=e+t.pageRangeDisplayed;return r>=a?a-1:r}},{key:"getBackwardJump",value:function(){var e=this.state.selected-this.props.pageRangeDisplayed;return e<0?0:e}},{key:"getElementHref",value:function(e){var t=this.props,a=t.hrefBuilder,r=t.pageCount,o=t.hrefAllControls;if(a)return o||e>=0&&e<r?a(e+1,r,this.state.selected):void 0}},{key:"ariaLabelBuilder",value:function(e){var t=e===this.state.selected;if(this.props.ariaLabelBuilder&&e>=0&&e<this.props.pageCount){var a=this.props.ariaLabelBuilder(e+1,t);return this.props.extraAriaContext&&!t&&(a=a+" "+this.props.extraAriaContext),a}}},{key:"getPageElement",value:function(e){var t=this.state.selected,a=this.props,r=a.pageClassName,o=a.pageLinkClassName,_=a.activeClassName,n=a.activeLinkClassName,i=a.extraAriaContext,s=a.pageLabelBuilder;return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_PageView__WEBPACK_IMPORTED_MODULE_2__.Z,{key:e,pageSelectedHandler:this.handlePageSelected.bind(null,e),selected:t===e,rel:this.getElementPageRel(e),pageClassName:r,pageLinkClassName:o,activeClassName:_,activeLinkClassName:n,extraAriaContext:i,href:this.getElementHref(e),ariaLabel:this.ariaLabelBuilder(e),page:e+1,pageLabelBuilder:s,getEventListener:this.getEventListener})}},{key:"render",value:function(){var e=this.props.renderOnZeroPageCount;if(0===this.props.pageCount&&void 0!==e)return e?e(this.props):e;var t=this.props,a=t.disabledClassName,r=t.disabledLinkClassName,o=t.pageCount,_=t.className,n=t.containerClassName,i=t.previousLabel,s=t.previousClassName,l=t.previousLinkClassName,p=t.previousAriaLabel,c=t.prevRel,d=t.nextLabel,u=t.nextClassName,f=t.nextLinkClassName,g=t.nextAriaLabel,P=t.nextRel,E=this.state.selected,b=0===E,y=E===o-1,v="".concat((0,_utils__WEBPACK_IMPORTED_MODULE_4__.m)(s)).concat(b?" ".concat((0,_utils__WEBPACK_IMPORTED_MODULE_4__.m)(a)):""),C="".concat((0,_utils__WEBPACK_IMPORTED_MODULE_4__.m)(u)).concat(y?" ".concat((0,_utils__WEBPACK_IMPORTED_MODULE_4__.m)(a)):""),O="".concat((0,_utils__WEBPACK_IMPORTED_MODULE_4__.m)(l)).concat(b?" ".concat((0,_utils__WEBPACK_IMPORTED_MODULE_4__.m)(r)):""),m="".concat((0,_utils__WEBPACK_IMPORTED_MODULE_4__.m)(f)).concat(y?" ".concat((0,_utils__WEBPACK_IMPORTED_MODULE_4__.m)(r)):""),L=b?"true":"false",h=y?"true":"false";return react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul",{className:_||n},react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li",{className:v},react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a",_extends({className:O,href:this.getElementHref(E-1),tabIndex:b?"-1":"0",role:"button",onKeyPress:this.handlePreviousPage,"aria-disabled":L,"aria-label":p,rel:c},this.getEventListener(this.handlePreviousPage)),i)),this.pagination(),react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li",{className:C},react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a",_extends({className:m,href:this.getElementHref(E+1),tabIndex:y?"-1":"0",role:"button",onKeyPress:this.handleNextPage,"aria-disabled":h,"aria-label":g,rel:P},this.getEventListener(this.handleNextPage)),d)))}},{key:"__reactstandin__regenerateByEval",value:function __reactstandin__regenerateByEval(key,code){this[key]=eval(code)}}]),PaginationBoxView}(react__WEBPACK_IMPORTED_MODULE_0__.Component),reactHotLoader,leaveModule;_defineProperty(PaginationBoxView,"propTypes",{pageCount:prop_types__WEBPACK_IMPORTED_MODULE_1___default().number.isRequired,pageRangeDisplayed:prop_types__WEBPACK_IMPORTED_MODULE_1___default().number,marginPagesDisplayed:prop_types__WEBPACK_IMPORTED_MODULE_1___default().number,previousLabel:prop_types__WEBPACK_IMPORTED_MODULE_1___default().node,previousAriaLabel:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,prevPageRel:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,prevRel:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,nextLabel:prop_types__WEBPACK_IMPORTED_MODULE_1___default().node,nextAriaLabel:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,nextPageRel:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,nextRel:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,breakLabel:prop_types__WEBPACK_IMPORTED_MODULE_1___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,prop_types__WEBPACK_IMPORTED_MODULE_1___default().node]),hrefBuilder:prop_types__WEBPACK_IMPORTED_MODULE_1___default().func,hrefAllControls:prop_types__WEBPACK_IMPORTED_MODULE_1___default().bool,onPageChange:prop_types__WEBPACK_IMPORTED_MODULE_1___default().func,onPageActive:prop_types__WEBPACK_IMPORTED_MODULE_1___default().func,onClick:prop_types__WEBPACK_IMPORTED_MODULE_1___default().func,initialPage:prop_types__WEBPACK_IMPORTED_MODULE_1___default().number,forcePage:prop_types__WEBPACK_IMPORTED_MODULE_1___default().number,disableInitialCallback:prop_types__WEBPACK_IMPORTED_MODULE_1___default().bool,containerClassName:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,className:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,pageClassName:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,pageLinkClassName:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,pageLabelBuilder:prop_types__WEBPACK_IMPORTED_MODULE_1___default().func,activeClassName:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,activeLinkClassName:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,previousClassName:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,nextClassName:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,previousLinkClassName:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,nextLinkClassName:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,disabledClassName:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,disabledLinkClassName:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,breakClassName:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,breakLinkClassName:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,extraAriaContext:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,ariaLabelBuilder:prop_types__WEBPACK_IMPORTED_MODULE_1___default().func,eventListener:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string,renderOnZeroPageCount:prop_types__WEBPACK_IMPORTED_MODULE_1___default().func,selectedPageRel:prop_types__WEBPACK_IMPORTED_MODULE_1___default().string}),_defineProperty(PaginationBoxView,"defaultProps",{pageRangeDisplayed:2,marginPagesDisplayed:3,activeClassName:"selected",previousLabel:"Previous",previousClassName:"previous",previousAriaLabel:"Previous page",prevPageRel:"prev",prevRel:"prev",nextLabel:"Next",nextClassName:"next",nextAriaLabel:"Next page",nextPageRel:"next",nextRel:"next",breakLabel:"...",disabledClassName:"disabled",disableInitialCallback:!1,pageLabelBuilder:function(e){return e},eventListener:"onClick",renderOnZeroPageCount:void 0,selectedPageRel:"canonical",hrefAllControls:!1}),reactHotLoader="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.default:void 0,reactHotLoader&&reactHotLoader.register(PaginationBoxView,"PaginationBoxView","/home/yoan/work/oss/react-paginate/react_components/PaginationBoxView.js"),leaveModule="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.leaveModule:void 0,leaveModule&&leaveModule(module)},351:(e,t,a)=>{"use strict";a.r(t),a.d(t,{default:()=>n});var r,o=a(214);e=a.hmd(e),(r="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.enterModule:void 0)&&r(e),"undefined"!=typeof reactHotLoaderGlobal&&reactHotLoaderGlobal.default.signature;var _=o.Z;const n=_;var i,s;(i="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.default:void 0)&&i.register(_,"default","/home/yoan/work/oss/react-paginate/react_components/index.js"),(s="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.leaveModule:void 0)&&s(e)},923:(e,t,a)=>{"use strict";var r,o,_;function n(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"";return null!=e?e:t}a.d(t,{m:()=>n}),e=a.hmd(e),(r="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.enterModule:void 0)&&r(e),"undefined"!=typeof reactHotLoaderGlobal&&reactHotLoaderGlobal.default.signature,(o="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.default:void 0)&&o.register(n,"classNameIfDefined","/home/yoan/work/oss/react-paginate/react_components/utils.js"),(_="undefined"!=typeof reactHotLoaderGlobal?reactHotLoaderGlobal.leaveModule:void 0)&&_(e)},703:(e,t,a)=>{"use strict";var r=a(414);function o(){}function _(){}_.resetWarningCache=o,e.exports=function(){function e(e,t,a,o,_,n){if(n!==r){var i=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw i.name="Invariant Violation",i}}function t(){return e}e.isRequired=e;var a={array:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:t,element:e,elementType:e,instanceOf:t,node:e,objectOf:t,oneOf:t,oneOfType:t,shape:t,exact:t,checkPropTypes:_,resetWarningCache:o};return a.PropTypes=a,a}},697:(e,t,a)=>{e.exports=a(703)()},414:e=>{"use strict";e.exports="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED"},98:e=>{"use strict";e.exports=__WEBPACK_EXTERNAL_MODULE__98__}},__webpack_module_cache__={};function __nested_webpack_require_21573__(e){var t=__webpack_module_cache__[e];if(void 0!==t)return t.exports;var a=__webpack_module_cache__[e]={id:e,loaded:!1,exports:{}};return __webpack_modules__[e](a,a.exports,__nested_webpack_require_21573__),a.loaded=!0,a.exports}__nested_webpack_require_21573__.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return __nested_webpack_require_21573__.d(t,{a:t}),t},__nested_webpack_require_21573__.d=(e,t)=>{for(var a in t)__nested_webpack_require_21573__.o(t,a)&&!__nested_webpack_require_21573__.o(e,a)&&Object.defineProperty(e,a,{enumerable:!0,get:t[a]})},__nested_webpack_require_21573__.hmd=e=>((e=Object.create(e)).children||(e.children=[]),Object.defineProperty(e,"exports",{enumerable:!0,set:()=>{throw new Error("ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: "+e.id)}}),e),__nested_webpack_require_21573__.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),__nested_webpack_require_21573__.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})};var __webpack_exports__=__nested_webpack_require_21573__(351);return __webpack_exports__})()}));
+//# sourceMappingURL=react-paginate.js.map
+
+/***/ }),
+
 /***/ "./node_modules/react-router-dom/index.js":
 /*!************************************************!*\
   !*** ./node_modules/react-router-dom/index.js ***!
@@ -65851,36 +66500,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./resources/js/Component/Dashboard/Table/Table.scss":
-/*!***********************************************************!*\
-  !*** ./resources/js/Component/Dashboard/Table/Table.scss ***!
-  \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_Table_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./Table.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/Component/Dashboard/Table/Table.scss");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_Table_scss__WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_Table_scss__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ }),
-
 /***/ "./resources/js/Component/InnerPage/ProductForm/Product.scss":
 /*!*******************************************************************!*\
   !*** ./resources/js/Component/InnerPage/ProductForm/Product.scss ***!
@@ -65911,6 +66530,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./resources/js/Component/InnerPage/Saleform/Saleform.scss":
+/*!*****************************************************************!*\
+  !*** ./resources/js/Component/InnerPage/Saleform/Saleform.scss ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_Saleform_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./Saleform.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/Component/InnerPage/Saleform/Saleform.scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_Saleform_scss__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_Saleform_scss__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./resources/js/Component/Login/Login.scss":
 /*!*************************************************!*\
   !*** ./resources/js/Component/Login/Login.scss ***!
@@ -65938,6 +66587,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_Login_scss__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/Component/Table/Table.scss":
+/*!*************************************************!*\
+  !*** ./resources/js/Component/Table/Table.scss ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_Table_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./Table.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/Component/Table/Table.scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_Table_scss__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_Table_scss__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 

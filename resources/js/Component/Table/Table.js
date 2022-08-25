@@ -55,16 +55,14 @@ var total = 0;
                                 </tr>
                                 )
                             })}
-                            
                             <tr >
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                               
-                                      <td>Total: Rs.{total}</td>
-                                </tr>
+                                <td><strong>Total: Rs.{total}</strong></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

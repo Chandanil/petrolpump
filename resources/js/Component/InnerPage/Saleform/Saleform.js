@@ -1,12 +1,11 @@
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-import "./Product.scss";
-import { Link } from "react-router-dom";
-export const Product = () => {
+import "./Saleform.scss";
+export const Saleform = () => {
     return (
         <div className="pd-section productSelect-wrap">
-            <Container>
+            <Container >
                 <div className="cl-header">
                     <h2 className="title">Select Product</h2>
                 </div>
@@ -100,35 +99,7 @@ export const Product = () => {
                         <Row>
                             <Col lg={{ span: 4, offset: 6 }}>
                                 <div className="form-group d-flex">
-                                    <label>Gross Amount:</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                    />
-                                </div>
-                                <div className="form-group d-flex">
-                                    <label>Discount:</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                    />
-                                </div>
-                                <div className="form-group d-flex">
-                                    <label>Taxable Amount:</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                    />
-                                </div>
-                                <div className="form-group d-flex">
-                                    <label>VAT:</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                    />
-                                </div>
-                                <div className="form-group d-flex">
-                                    <label>Grand Total:</label>
+                                    <label>Total Amount:</label>
                                     <input
                                         type="text"
                                         className="form-control"
@@ -145,48 +116,16 @@ export const Product = () => {
                                     </select>
                                 </div>
                                 <div className="form-group d-flex">
+                                    <label>Paid Amount:</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                    />
+                                </div>
+                                <div className="form-group d-flex">
                                     <label></label>
                                     <button className="cl-btn ">
-                                        Generate Bill
-                                    </button>
-                                </div>
-                            </Col>
-                        </Row>
-                    </div>
-                    <div className="total">
-                        <Row>
-                            <Col lg={3} md={6}>
-                                <div className="form-group d-flex">
-                                    <label>Tender Amount:</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                    />
-                                </div>
-                            </Col>
-                            <Col lg={3} md={6}>
-                                <div className="form-group d-flex">
-                                    <label>Return:</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                    />
-                                </div>
-                            </Col>
-                            <Col lg={3} md={6}>
-                                <div className="form-group d-flex">
-                                    <label>Due:</label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                    />
-                                </div>
-                            </Col>
-                            <Col lg={3} md={6}>
-                                <div className="form-group d-flex">
-                                    <label></label>
-                                    <button className="cl-btn sm-w-100">
-                                        Save Sale
+                                        Submit
                                     </button>
                                 </div>
                             </Col>

@@ -1,8 +1,5 @@
 @import "./Mixin.scss";
 @import "./Variable.scss";
-.App {
-    border-radius: 10px 10px 10px 0;
-}
 body {
     font-size: 16px;
     font-family: "Manrope", sans-serif;
@@ -100,7 +97,7 @@ input[type="checkbox"] {
     font-size: 14px;
 }
 .wrapper-content{
-   width: 86%;
+   width: 87%;
     transition: $transition;
     float: right;
 }

@@ -21,7 +21,6 @@ class CustomerController extends Controller
             ],
             [
                 'name'=>'chandani',
-                
                 'product'=>'desel',
                 'invoice'=>'123456',
                 'quantity'=>'10 ltr',
@@ -64,5 +63,64 @@ class CustomerController extends Controller
             'icon'=>' fa fa-opencart icon',
         ],
     ];
+    }
+    public function tablelist() {
+        return[
+            [
+                'customer_name'=>'chandani',
+                'product'=>'desel',
+                'invoice'=>'123456',
+                'quantity'=>'10 ltr',
+                't_amount'=>'11080',
+                'sale_by'=>'Admin',
+                'date'=> '02-03-2022',
+            ],
+            [
+                'customer_name'=>'Ashish',
+                'product'=>'desel',
+                'invoice'=>'123456',
+                'quantity'=>'10 ltr',
+                't_amount'=>'11080',
+                'sale_by'=>'Admin',
+                'date'=> '02-03-2022',
+            ],
+            [
+                'customer_name'=>'Rijesh',
+                'product'=>'desel',
+                'invoice'=>'123456',
+                'quantity'=>'10 ltr',
+                't_amount'=>'11080',
+                'sale_by'=>'Admin',
+                'date'=> '02-03-2022',
+            ],
+            [
+                'customer_name'=>'Einsteina',
+                'product'=>'desel',
+                'invoice'=>'123456',
+                'quantity'=>'10 ltr',
+                't_amount'=>'11080',
+                'sale_by'=>'Admin',
+                'date'=> '02-03-2022',
+            ],
+            [
+                'customer_name'=>'Muksam',
+                'product'=>'desel',
+                'invoice'=>'123456',
+                'quantity'=>'10 ltr',
+                't_amount'=>'11080',
+                'sale_by'=>'Admin',
+                'date'=> '02-03-2022',
+            ],
+            [
+                'customer_name'=>'Suman',
+                'product'=>'desel',
+                'invoice'=>'123456',
+                'quantity'=>'10 ltr',
+                't_amount'=>'11080',
+                'sale_by'=>'Admin',
+                'date'=> '02-03-2022',
+            ],
+            
+        ];
     }
 }

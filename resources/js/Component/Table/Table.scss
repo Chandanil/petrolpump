@@ -1,0 +1,54 @@
+@import "../Style/All.scss";
+
+.cl-table{
+    font-size: 14px;
+    table {
+        text-align: center;
+    }
+    .btn {
+        font-size: 12px;
+        float: right;
+    }
+    thead {
+        th {
+            color: #A2A2A2;
+            font-weight: $font-400;
+        }
+    }
+    tbody {
+        td{
+            color: $font-color;
+        }
+        tr{
+            &:last-child{
+                td{
+                border: none;
+                }
+            }
+        }
+    }
+}
+.table-list{
+    .search-content {
+        justify-content: space-between;
+        align-items: center;
+    }
+    .select {
+        select {
+            background: #e3e3e3;
+            border: 1px solid #e3e3e3;
+            margin: 0 7px;
+            border-radius: 4px;
+            font-weight: $font-500;
+        }
+        span {
+            margin: 0 5px;
+            font-weight: $font-500;
+            font-size: 16px;
+            color: $font-color;
+        }
+    }
+.download-doc{
+    @include download-btn;
+}
+}

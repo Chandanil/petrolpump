@@ -9,6 +9,8 @@ import { Product } from "./Component/InnerPage/ProductForm/Product";
 import { Sidebar } from "./Component/Dashboard/Sidebar/Sidebar";
 import { Header } from "./Component/Dashboard/Header/Header";
 import axios from "axios";
+import { Saleform } from "./Component/InnerPage/Saleform/Saleform";
+import { Managesale } from "./Component/InnerPage/ManageSale/Managesale";
 
 const App = () => {
     const [showSidebar, setShowSidebar] = useState(true);
@@ -55,6 +57,11 @@ const App = () => {
                                     path="/productsale"
                                     element={<Product />}
                                 />
+                                  <Route
+                                    path="/newsale"
+                                    element={<Saleform />}
+                                />
+                                <Route path='/managesale' element={<Managesale />}/>
                             </Routes>
                         </section>
                     </div>

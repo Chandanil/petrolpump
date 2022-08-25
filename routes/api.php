@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('customers',[App\Http\Controllers\Api\CustomerController::class,'index']);
 Route::get('piechartData',[App\Http\Controllers\Api\CustomerController::class,'piechartData']);
 Route::get('infoData',[App\Http\Controllers\Api\CustomerController::class,'infoData']);
+Route::get('tablelist',[App\Http\Controllers\Api\CustomerController::class,'tablelist']);
