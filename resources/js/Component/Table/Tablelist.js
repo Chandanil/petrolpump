@@ -2,75 +2,105 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { ReactCSV } from "../DownloadDoc/ReactCSV";
+import jsPDF from 'jspdf';
+import pdfMake from 'pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+import htmlToPdfmake from 'html-to-pdfmake';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import $ from "jquery";
+
 const items = [...Array(33).keys()];
 
 function Items({ currentItems }) {
   // console.log(currentItems);
   var total=0
     return (
-        <div className="items">
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>S.N</th>
-                        <th>Invoice No.</th>
-                        <th>Sale By</th>
-                        <th>Customer Name</th>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Date</th>
-                        <th>Total Amount</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {currentItems && currentItems?.map((item, index) => {
-                        total += parseFloat(item.t_amount);
-                        return (
-                            <tr key={index}>
-                                <td>{index + 1}</td>
-                                <td>{item.invoice}</td>
-                                <td>{item.sale_by}</td>
-                                <td>{item.customer_name}</td>
-                                <td>{item.product}</td>
-                                <td>{item.quantity}</td>
-                                <td>{item.date}</td>
-                                <td>{item.t_amount}</td>
-                                <td></td>
-                            </tr>
-                        );
-                    })}
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <strong>Total Rs: {total}</strong>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div className="items" >
+            <div >
+                <table className="table cl-table " id="divToPrint">
+                    <thead>
+                        <tr>
+                            <th>S.N</th>
+                            <th>Invoice No.</th>
+                            <th>Sale By</th>
+                            <th>Customer Name</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Date</th>
+                            <th>Total Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {currentItems && currentItems?.map((item, index) => {
+                            total += parseFloat(item.t_amount);
+                            return (
+                                <tr key={index}>
+                                    <td>{index + 1}</td>
+                                    <td>{item.invoice}</td>
+                                    <td>{item.sale_by}</td>
+                                    <td>{item.customer_name}</td>
+                                    <td>{item.product}</td>
+                                    <td>{item.quantity}</td>
+                                    <td>{item.date}</td>
+                                    <td>{item.t_amount}</td>
+                                    <td></td>
+                                </tr>
+                            );
+                        })}
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <strong>Total Rs: {total}</strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
         </div>
     );
 }
 export const Tablelist = ({ itemsPerPage = 4}) => {
-    const[tablelist, setTablelist]=useState([]);
-    var total = 0;
-     useEffect(()=>{
-        fetchtablelist();
-    },[]) 
+    //this is for pdf 
+    const printDocument = ()=> {
+        //const input = document.getElementById('divToPrint');
+      
+            const doc = new jsPDF();
+           
+            //get table html
+            const pdfTable = document.getElementById('divToPrint');
+            //html to pdf format
+            var html = htmlToPdfmake(pdfTable.innerHTML);
+          
+            const documentDefinition = { content: html };
+            pdfMake.vfs = pdfFonts.pdfMake.vfs;
+            pdfMake.createPdf(documentDefinition).open();
+          
+      }
+    //pdf code end
 
-   const fetchtablelist = () =>{
-       axios.get('/api/tablelist').then(({data})=>{
-        setTablelist(data);
-        console.log(data);
-       })
-    }
+//table api fetch gareko
+const[tablelist, setTablelist]=useState([]);
+var total = 0;
+ useEffect(()=>{
+    fetchtablelist();
+},[]) 
+
+const fetchtablelist = () =>{
+   axios.get('/api/tablelist').then(({data})=>{
+    setTablelist(data);
+    console.log(data);
+   })
+}
+//api fetch code end 
      
+  //pagination code start
     // We start with an empty list of items.
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
@@ -96,9 +126,16 @@ export const Tablelist = ({ itemsPerPage = 4}) => {
         );
         setItemOffset(newOffset);
     };
+  //pagination code end
+  //copy code start
+//   var html = document.getElementById('divToPrint');
+
+  const srcCode =$(document).html;
+
+  //copy code end
 
     return (
-        <div className="cl-table same-bg table-list">
+        <div className="same-bg table-list">
             <form>
                 <div className="d-flex search-content">
                     <div className="select form-group d-flex">
@@ -125,9 +162,13 @@ export const Tablelist = ({ itemsPerPage = 4}) => {
                     </div>
                     <ul className="download-doc form-group">
                         <li className="item"><ReactCSV name="CSV"/></li>
-                        <li className="item">PDF</li>
+                        <li className="item" onClick={printDocument}>PDF</li>
                         <li className="item">Copy</li>
                         <li className="item">Print</li>
+                        <CopyToClipboard text={srcCode} onCopy={() => alert("copied")}>
+        <button>Copy</button>
+      </CopyToClipboard>
+ 
                     </ul>
                 </div>
             </form>

@@ -2,8 +2,7 @@ import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import {Tablelist} from "../../Table/Tablelist";
-import { PDFfile } from "../../DownloadDoc/PDFfile";
-import { PDFViewer } from '@react-pdf/renderer';
+
 
 export const Managesale = () => {
     return (
@@ -31,9 +30,6 @@ export const Managesale = () => {
                     <h2 className="title">Manage Sale</h2>
                 </div>
               <Tablelist />
-              <PDFViewer >
-        <PDFfile />
-  </PDFViewer>
             </form>
             </Container>
         </div>

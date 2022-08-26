@@ -1,6 +1,7 @@
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 
+// Create styles
 const styles = StyleSheet.create({
   page: {
     flexDirection: 'row',
@@ -12,10 +13,10 @@ const styles = StyleSheet.create({
     flexGrow: 1
   }
 });
-export const PDFfile = () => {
-  return(
-    <div>
-      <Document>
+
+// Create Document Component
+export const PDFfile = () => (
+  <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
         <Text>Section #1</Text>
@@ -25,6 +26,4 @@ export const PDFfile = () => {
       </View>
     </Page>
   </Document>
-    </div>
-  )
-}
+);
