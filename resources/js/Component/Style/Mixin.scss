@@ -44,6 +44,9 @@
         border-right: 1px solid #fff;
         font-weight: $font-500;
         cursor: pointer;
+        a{
+            color: #fff;
+        }
         &:hover{
             opacity: 0.7;
         }

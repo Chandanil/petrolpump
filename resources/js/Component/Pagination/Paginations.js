@@ -1,5 +1,6 @@
 import ReactPaginate from "react-paginate";
 import React, { useEffect, useState } from "react";
+import "../Style/All.scss";
 
 const items = [...Array(33).keys()];
 
@@ -53,12 +54,6 @@ function Items({ currentItems }) {
                     </tr>
                 </tbody>
             </table>
-            {/* {currentItems &&
-                currentItems.map((item) => (
-                    <div>
-                        <h3>Item #{item}</h3>
-                    </div>
-                ))} */}
         </div>
     );
 }
@@ -105,26 +100,31 @@ export const Paginations = ({ itemsPerPage = 4 }) => {
     return (
         <>
             <Items currentItems={currentItems} />
-            <ReactPaginate
-                nextLabel="next >"
-                onPageChange={handlePageClick}
-                pageRangeDisplayed={3}
-                marginPagesDisplayed={2}
-                pageCount={pageCount}
-                previousLabel="< previous"
-                pageClassName="page-item"
-                pageLinkClassName="page-link"
-                previousClassName="page-item"
-                previousLinkClassName="page-link"
-                nextClassName="page-item"
-                nextLinkClassName="page-link"
-                breakLabel="..."
-                breakClassName="page-item"
-                breakLinkClassName="page-link"
-                containerClassName="pagination"
-                activeClassName="active"
-                renderOnZeroPageCount={null}
-            />
+            <div className="pagination-wrap d-flex">
+            <div className="r_show">
+                    <strong className="shows">Showing 1 to 7 of 1000 Entries</strong>
+                </div>
+                <ReactPaginate
+                    nextLabel="next >"
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={3}
+                    marginPagesDisplayed={2}
+                    pageCount={pageCount}
+                    previousLabel="< previous"
+                    pageClassName="page-item"
+                    pageLinkClassName="page-link"
+                    previousClassName="page-item"
+                    previousLinkClassName="page-link"
+                    nextClassName="page-item"
+                    nextLinkClassName="page-link"
+                    breakLabel="..."
+                    breakClassName="page-item"
+                    breakLinkClassName="page-link"
+                    containerClassName="pagination cl-pagination"
+                    activeClassName="active"
+                    renderOnZeroPageCount={null}
+                />
+            </div>
         </>
     );
 };
