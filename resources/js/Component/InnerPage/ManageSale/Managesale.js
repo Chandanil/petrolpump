@@ -2,9 +2,60 @@ import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import {Tablelist} from "../../Table/Tablelist";
+    import React, { useMemo, useState, useEffect } from "react";
+import { AllTable } from "../../Table/AllTable";
+import axios from "axios";
 
 
-export const Managesale = () => {
+export const Managesale = () => {  
+    const[tablelists, setTablelist]=useState([]);
+    // useEffect(()=>{
+    //     fetchtablelist();
+    // },[]) 
+    // const fetchtablelist = () =>{
+    //     axios.get('/api/tablelist').then(({data})=>{
+    //      setTablelist(data);
+    //      console.log(data);
+    //     })
+    //  }
+     useEffect(()=>{
+         axios.get('/api/tablelist').then(({data})=>{
+          setTablelist(data)
+               
+               })
+              
+       },[])
+ 
+     console.log(tablelists,"RGRG")
+//   const [data, setData] = useState([]);
+
+const columns =  useMemo(
+    () => [
+
+        {
+            Header: "customer Name",
+            accessor: "customer_name"
+      
+          },
+          {
+            Header: "Product",
+            accessor: "product"
+      
+          },
+          
+
+    ]
+)
+
+         
+     
+
+
+       
+      // Custom component to render Genres 
+
+  // Loop through the array and create a badge-like component instead of a comma-separated string
+    
     return (
         <div className="pd-section managesale-section">
             <Container>
@@ -29,9 +80,11 @@ export const Managesale = () => {
                 <div className="cl-header">
                     <h2 className="title">Manage Sale</h2>
                 </div>
-              <Tablelist />
+              {/* <Tablelist /> */}
+              <AllTable  columns={columns}  data={tablelists}/>
             </form>
             </Container>
         </div>
     )
+
 }

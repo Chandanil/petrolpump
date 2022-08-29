@@ -6,7 +6,6 @@ import jsPDF from 'jspdf';
 import pdfMake from 'pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import htmlToPdfmake from 'html-to-pdfmake';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
 import $ from "jquery";
 
 const items = [...Array(33).keys()];
@@ -127,12 +126,6 @@ const fetchtablelist = () =>{
         setItemOffset(newOffset);
     };
   //pagination code end
-  //copy code start
-//   var html = document.getElementById('divToPrint');
-
-  const srcCode =$(document).html;
-
-  //copy code end
 
     return (
         <div className="same-bg table-list">
@@ -163,11 +156,7 @@ const fetchtablelist = () =>{
                     <ul className="download-doc form-group">
                         <li className="item"><ReactCSV name="CSV"/></li>
                         <li className="item" onClick={printDocument}>PDF</li>
-                        <li className="item">Copy</li>
                         <li className="item">Print</li>
-                        <CopyToClipboard text={srcCode} onCopy={() => alert("copied")}>
-        <button>Copy</button>
-      </CopyToClipboard>
  
                     </ul>
                 </div>

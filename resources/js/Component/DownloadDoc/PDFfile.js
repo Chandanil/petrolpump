@@ -5,9 +5,11 @@ import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 const styles = StyleSheet.create({
   page: {
     flexDirection: 'row',
-    backgroundColor: '#E4E4E4'
+    backgroundColor: 'red',
+    display: "flex",
   },
   section: {
+    backgroundColor:"#ff0505",
     margin: 10,
     padding: 10,
     flexGrow: 1
@@ -15,9 +17,11 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-export const PDFfile = () => (
-  <Document>
-    <Page size="A4" style={styles.page}>
+export const PDFfile = (props) => {
+  return (
+    <>
+      <Document>
+    <Page size="A4" style={backgroundColor= '#000000'}>
       <View style={styles.section}>
         <Text>Section #1</Text>
       </View>
@@ -26,4 +30,6 @@ export const PDFfile = () => (
       </View>
     </Page>
   </Document>
-);
+    </>
+  )
+}
