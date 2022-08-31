@@ -26,7 +26,6 @@
         }
     }
 }
-.table-list{
     .search-content {
         justify-content: space-between;
         align-items: center;
@@ -35,18 +34,19 @@
         select {
             background: #e3e3e3;
             border: 1px solid #e3e3e3;
-            margin: 0 7px;
+            margin-right: 10px;
             border-radius: 4px;
             font-weight: $font-500;
+            &:focus-visibles{
+               outline: none !important;
+               border: none
+            }
         }
-        span {
-            margin: 0 5px;
-            font-weight: $font-500;
-            font-size: 16px;
-            color: $font-color;
+        input {
+            padding: 0 8px;
         }
     }
+      
 .download-doc{
     @include download-btn;
-}
 }

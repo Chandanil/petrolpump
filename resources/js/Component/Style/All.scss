@@ -124,13 +124,31 @@ input[type="checkbox"] {
     align-items: center;
 }
 .cl-pagination {
-    display: inline-flex;
-    align-items: center;
+   .page-button {
     background: #337ab7;
-    padding: 6px 4px;
-    border-radius: 5px;
-    align-items: center;
     margin-left: auto;
+    border-radius: 5px;
+    background: #337ab7;
+    padding: 7px;
+    button {
+        &:disabled {
+            color: #fff;
+           background-color: transparent;
+               padding: 4px 10px;
+               transition: $transition;
+        }
+        background-color: #fff;
+        color: #000;
+        border: none;
+        border-radius: 4px;
+        padding: 4px 10px;
+        transition: $transition;
+        margin-right: 3px;
+        &:last-child{
+            margin-right: 0;
+        }
+   }
+   }
     .page-item {
         .page-link {
             background-color: $color-blue;
