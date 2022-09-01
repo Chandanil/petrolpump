@@ -11,6 +11,9 @@ import { Header } from "./Component/Dashboard/Header/Header";
 import axios from "axios";
 import { Saleform } from "./Component/InnerPage/Saleform/Saleform";
 import { Managesale } from "./Component/InnerPage/ManageSale/Managesale";
+import { AllTable } from "./Component/Table/AllTable";
+import { Customerlist } from "./Component/InnerPage/Customerlist/Customerlist";
+import { Addcustomer } from "./Component/InnerPage/Customerlist/Addcustomer";
 
 const App = () => {
     const [showSidebar, setShowSidebar] = useState(true);
@@ -62,6 +65,8 @@ const App = () => {
                                     element={<Saleform />}
                                 />
                                 <Route path='/managesale' element={<Managesale />}/>
+                                <Route path='/customerlist' element={<Customerlist />}/>
+                                <Route path="/addcustomer" element={<Addcustomer />} />
                             </Routes>
                         </section>
                     </div>

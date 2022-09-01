@@ -129,4 +129,69 @@ class CustomerController extends Controller
             
         ];
     }
+    public function customerlist() {
+        return[
+            [
+                'sn'=> '1',
+                'customer_name'=>'chandani',
+                'product'=>'desel',
+                'invoice'=>'123456',
+                'quantity'=>'10 ltr',
+                't_amount'=>'11080',
+                'sale_by'=>'Admin',
+                'date'=> '02-03-2022',
+            ],
+            [
+                'sn'=> '2',
+                'customer_name'=>'chandani',
+                'product'=>'desel',
+                'invoice'=>'123457',
+                'quantity'=>'10 ltr',
+                't_amount'=>'11080',
+                'sale_by'=>'Suer',
+                'date'=> '02-03-2022',
+            ],
+            [
+                'sn'=> '3',
+                'customer_name'=>'chandani',
+                'product'=>'desel',
+                'invoice'=>'123458',
+                'quantity'=>'10 ltr',
+                't_amount'=>'11080',
+                'sale_by'=>'Admin',
+                'date'=> '02-03-2022',
+            ],
+            [
+                'sn'=> '4',
+                'customer_name'=>'chandani',
+                'product'=>'desel',
+                'invoice'=>'123459',
+                'quantity'=>'10 ltr',
+                't_amount'=>'11080',
+                'sale_by'=>'User',
+                'date'=> '02-03-2022',
+            ],
+            [
+                'sn'=> '5',
+                'customer_name'=>'Muksam',
+                'product'=>'desel',
+                'invoice'=>'123410',
+                'quantity'=>'10 ltr',
+                't_amount'=>'11080',
+                'sale_by'=>'Admin',
+                'date'=> '02-03-2022',
+            ],
+            [
+                'sn'=> '6',
+                'customer_name'=>'Suman',
+                'product'=>'desel',
+                'invoice'=>'1234511',
+                'quantity'=>'10 ltr',
+                't_amount'=>'11080',
+                'sale_by'=>'User',
+                'date'=> '02-03-2022',
+            ],
+            
+        ];
+    }
 }

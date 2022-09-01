@@ -23,3 +23,4 @@ Route::get('customers',[App\Http\Controllers\Api\CustomerController::class,'inde
 Route::get('piechartData',[App\Http\Controllers\Api\CustomerController::class,'piechartData']);
 Route::get('infoData',[App\Http\Controllers\Api\CustomerController::class,'infoData']);
 Route::get('tablelist',[App\Http\Controllers\Api\CustomerController::class,'tablelist']);
+Route::get('customerlist',[App\Http\Controllers\Api\CustomerController::class,'customerlist']);

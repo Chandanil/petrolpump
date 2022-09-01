@@ -44,11 +44,11 @@ export const Sidebar = (props) => {
               <span>Customer</span>
             </Accordion.Header>
             <Accordion.Body>
-              <Link className="item" to="">
-              Customer 1
+              <Link className="item" to="/customerlist">
+              Customer List
               </Link>
-              <Link className="item" to="">
-              Customer 2
+              <Link className="item" to="addcustomer">
+              Add Customer 
               </Link>
             </Accordion.Body>
           </Accordion.Item>

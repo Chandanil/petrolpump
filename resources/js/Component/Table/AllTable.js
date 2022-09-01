@@ -17,6 +17,19 @@ import { useReactToPrint } from "react-to-print";
 //css
 import "../Table/Table.scss";
 export const AllTable = ({ columns, data ,searchdata}) => {
+      //search in table mileko xaina
+    // const [searchVal, Setsearchdata] = useState('');
+    // const inputhandler = (e) => {
+    //   // const searchdata=e.target.value;
+    //   Setsearchdata(e.target.value);
+    //   const filterData = data.filter((c_name)=> {
+    //     return (
+    //       e.target.value===data.customer_name
+    //     )
+    //   })
+    //   console.log(filterData, "hi")
+    // }
+    //search end table code end
    //this is for pdf 
    const ref = React.createRef();
   //  const pdfDocument = ()=> {
@@ -76,19 +89,6 @@ const options = {
         usePagination
     );
 
-    //search in table 
-    const [searchVal, Setsearchdata] = useState('');
-    const inputhandler = (e) => {
-      // const searchdata=e.target.value;
-      Setsearchdata(e.target.value);
-      const filterData = data.filter((c_name)=> {
-        return (
-          e.target.value===data.customer_name
-        )
-      })
-      console.log(filterData, "hi")
-    }
-    //search end tale code end
     const { pageIndex, pageSize } = state;
     return (
         <>
@@ -115,9 +115,7 @@ const options = {
                                 type="number"
                                 value={pageIndex + 1}
                                 onChange={(e) => {
-                                    const page = e.target.value
-                                        ? Number(e.target.value) - 1
-                                        : 0;
+                                    const page = e.target.value ? Number(e.target.value) - 1 : 0;
                                     gotoPage(page);
                                 }}
                                 style={{ width: "100px" }}
@@ -129,9 +127,7 @@ const options = {
                             {/* <input  onChange={(e) => Setsearchdata(e.target.value)} value={searchVal} */}
                             <input  onChange={(e) => {
                               searchdata(e.target.value)
-                              
-                              console.log(page)
-
+                            //   console.log(page)
                             }} 
                                 type="text"
                                 name=""
@@ -155,10 +151,6 @@ const options = {
                         </ul>
                     </div>
                 </form>
-                {/* <Pdf targetRef={ref} filename="code.pdf">
-        {({ toPdf }) => <button onClick={toPdf }>Generate Pdf</button> }
-
-      </Pdf> */}
       
    
                 <table {...getTableProps()} className="table cl-table" id="divToPrint" ref={dataToPrintRef}>

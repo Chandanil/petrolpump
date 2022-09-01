@@ -5,39 +5,28 @@ import { Tablelist } from "../../Table/Tablelist";
 import React, { useMemo, useState, useEffect } from "react";
 import { AllTable } from "../../Table/AllTable";
 import axios from "axios";
+// import DatePicker, { ReactDatePicker } from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
+
 
 export const Managesale = () => {
     const [tablelists, setTablelist] = useState([]);
-    // useEffect(()=>{
-    //     fetchtablelist();
-    // },[])
-    // const fetchtablelist = () =>{
-    //     axios.get('/api/tablelist').then(({data})=>{
-    //      setTablelist(data);
-    //      console.log(data);
-    //     })
-    //  }
-    var tabledata = [];
-    axios.get("/api/tablelist").then(({ data }) => {
-        // setTablelist(data)
-        tabledata.push = data;
-    });
-    console.log(tabledata, "table");
+    const [tabledata, setTableData] = useState([]);
+    
     useEffect(() => {
         axios.get("/api/tablelist").then(({ data }) => {
             setTablelist(data);
+            setTableData(data);
         });
     }, []);
     const searchdata = (e) => {
-        const filtered = tabledata.push.filter((row) => {
+        const filtered = tabledata.filter((row) => {
             return row.customer_name.includes(e);
         });
         setTablelist(filtered);
-        console.log(filtered, "filte");
+       
     };
 
-    console.log(tablelists, "RGRG");
-    //   const [data, setData] = useState([]);
 
     const columns = useMemo(() => [
         {
@@ -81,6 +70,10 @@ export const Managesale = () => {
 
     // Loop through the array and create a badge-like component instead of a comma-separated string
 
+    //datepicker 
+    // const [startDate, setStartDate] = useState(new Date());
+
+
     return (
         <div className="pd-section managesale-section">
             <Container>
@@ -95,6 +88,7 @@ export const Managesale = () => {
                                     id=""
                                     className="form-control"
                                 />
+                                {/* <ReactDatePicker selected={startDate} onChange={(date:Date) => setStartDate(date)} /> */}
                             </div>
                         </Col>
                         <Col sm={6} md={3}>
